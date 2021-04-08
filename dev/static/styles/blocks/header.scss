@@ -1,0 +1,73 @@
+@keyframes phoneAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.header {
+  min-height: 100px;
+
+  .logo img {
+    max-width: 140px;
+    height: auto;
+  }
+
+  .phone {
+    font-size: rem(25px);
+    text-decoration: none;
+
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.nav {
+  white-space: nowrap;
+
+  ul {
+    display: flex;
+    margin-bottom : 0;
+
+    li {
+      margin-right: 48px;
+
+      a {
+        display: block;
+        color: $dark;
+        text-decoration: none;
+
+        position: relative;
+
+        &::after {
+          content: '';
+          display: block;
+
+          position: absolute;
+          bottom: 0%;
+          right: 0;
+          left: unset;
+
+          width: 0%;
+          height: 2px;
+          background: $success;
+
+          transition: width .3s;
+        }
+
+        &:hover::after {
+          width: 100%;
+          left: 0;
+          right: unset;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@
  * HERE YOUR GLOBAL STYLES
  */
 html {
-	font-size: 16px;
+	@include rem-baseline;
 }
 
 html, body {
@@ -19,3 +19,4 @@ html, body {
 
 // Responsive styles
 @import "utils/media";
+@import "utils/utils";

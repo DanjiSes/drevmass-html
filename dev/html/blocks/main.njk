@@ -9,9 +9,14 @@
 {%set phone = { "t": "+7 999 999 99 99", "l": "+79999999999" } %}
 
 <header class="header">
-  <div class="container">
-    <img src="static/images/logo.png" alt="DREV MASS">
+  <div class="container d-flex align-items-center justify-content-between">
 
+    {# Logo #}
+    <div class="logo">
+      <img src="static/images/logo.png" alt="DREV MASS">
+    </div>
+
+    {# Nav #}
     <nav class="nav">
       <ul class="list-unstyled">
         {% for l in menu %}
@@ -19,5 +24,13 @@
         {% endfor %}
       </ul>
     </nav>
+
+    {# Phone #}
+    <a href="tel:{{ phone.l }}"
+       class="phone text-dark font-weight-bold"
+       data-t="{{ phone.t }}">
+      {{ phone.t }}
+    </a>
+  
   </div>
 </header>
