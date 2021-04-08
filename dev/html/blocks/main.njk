@@ -1,0 +1,23 @@
+{%set menu = [
+  {"t": "Как снять боль?", "l": "#"},
+  {"t": "Комплектация", "l": "#"},
+  {"t": "Отзывы", "l": "#"},
+  {"t": "Гарантия", "l": "#"},
+  {"t": "Контакты", "l": "#"}
+]%}
+
+{%set phone = { "t": "+7 999 999 99 99", "l": "+79999999999" } %}
+
+<header class="header">
+  <div class="container">
+    <img src="static/images/logo.png" alt="DREV MASS">
+
+    <nav class="nav">
+      <ul class="list-unstyled">
+        {% for l in menu %}
+          <li><a href="{{ l.l }}">{{ l.t }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
