@@ -71,3 +71,13 @@
     }
   }
 }
+
+@include media-breakpoint-down(lg) {
+  .nav {
+    ul {
+      li {
+        margin-right: 38px;
+      }
+    }
+  }
+}

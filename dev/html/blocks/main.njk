@@ -9,7 +9,7 @@
 {%set phone = { "t": "+7 999 999 99 99", "l": "+79999999999" } %}
 
 <header class="header">
-  <div class="container d-flex align-items-center justify-content-between">
+  <div class="container-fluid py-2 d-flex align-items-center justify-content-between">
 
     {# Logo #}
     <div class="logo">
@@ -17,7 +17,7 @@
     </div>
 
     {# Nav #}
-    <nav class="nav">
+    <nav class="nav d-none d-lg-block">
       <ul class="list-unstyled">
         {% for l in menu %}
           <li><a href="{{ l.l }}">{{ l.t }}</a></li>
@@ -25,12 +25,46 @@
       </ul>
     </nav>
 
-    {# Phone #}
-    <a href="tel:{{ phone.l }}"
-       class="phone text-dark font-weight-bold"
-       data-t="{{ phone.t }}">
-      {{ phone.t }}
-    </a>
+    <div class="px-3 d-flex align-items-center">
+      {# Phone #}
+      <a href="tel:{{ phone.l }}"
+        class="phone text-dark font-weight-bold d-none d-lg-block"
+        data-t="{{ phone.t }}">
+        {{ phone.t }}
+      </a>
+
+      <a href="#menu">
+        <svg class="burger ml-4 d-lg-none" width="40" height="26" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line y1="0.5" x2="20" y2="0.5" stroke="black" />
+          <line y1="6.5" x2="20" y2="6.5" stroke="black" />
+          <line y1="12.5" x2="20" y2="12.5" stroke="black" />
+        </svg>
+      </a>
+
+    </div>
   
   </div>
 </header>
+
+<div class="mobile-nav">
+  {# Logo #}
+  <div class="logo">
+    <img src="static/images/logo.png" alt="DREV MASS">
+  </div>
+
+  {# Nav #}
+  <nav class="nav">
+    <ul class="list-unstyled">
+      {% for l in menu %}
+        <li><a href="{{ l.l }}">{{ l.t }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  {# Phone #}
+  <a href="tel:{{ phone.l }}"
+    class="phone text-dark font-weight-bold"
+    data-t="{{ phone.t }}">
+    {{ phone.t }}
+  </a>
+</div>
