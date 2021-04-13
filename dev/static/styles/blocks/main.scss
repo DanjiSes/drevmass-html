@@ -4,6 +4,10 @@
 * Main Image
 */
 
+.main {
+  padding-bottom: 100px;
+}
+
 .main-image {
   position: absolute;
   z-index: -1;
@@ -12,7 +16,7 @@
 
   width: 780px;
 
-  transform: translateX(30%);
+  transform: translate(30%, 5%);
 
   &__circle {
     position: absolute;
