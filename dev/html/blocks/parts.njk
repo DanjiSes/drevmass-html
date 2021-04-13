@@ -5,29 +5,34 @@
 {% set parts = [
   {
     name: "Ролик с шипами",
-    descr: "Для более глубокого и интенсивного массажа"
+    descr: "Для более глубокого и интенсивного массажа",
+    arrows: ['pa1']
   },
   {
     name: "Рама",
-    descr: "Удерживающий элемент-основа"
+    descr: "Удерживающий элемент-основа",
+    arrows: ['pa2']
   },
   {
     name: "Асимметричный ролик",
-    descr: "Для исправления и профилактики сколиоза"
+    descr: "Для исправления и профилактики сколиоза",
+    arrows: ['pa3']
   },
   {
     name: "Вспомогательные ролики",
-    descr: "Необходимы для стабилизации и облегчения упражнений"
+    descr: "Необходимы для стабилизации и облегчения упражнений",
+    arrows: ['pa4']
   },
   {
     name: "Основной ролик",
-    descr: "Оказывает точечное воздействие на целевую область спины"
+    descr: "Оказывает точечное воздействие на целевую область спины",
+    arrows: ['pa5']
   }
 ] %}
 
 <section class="parts">
 
-  <div class="container">
+  <div class="container position-relative">
     {# Title #}
     <h2 class="h1 text-center">Массажер-тренажер Древмасс совмещает положительные стороны всех способов и позволяет добиться результата за 7 минут в день</h2>
     {# Preview #}
@@ -39,7 +44,10 @@
     {% for p in parts %}
       <dl class="part part_{{ loop.index }}">
         <dt class="part__name">{{ p.name }}</dt>
-        <dd class="part__des">{{ p.descr }}</dd>
+        <dd class="part__desc">{{ p.descr }}</dd>
+        {% for arrow in p.arrows %}
+            <img class="arrow" src="static/images/content/{{ arrow }}.svg" alt="">
+        {% endfor %}
       </dl>
     {% endfor %}
   </div>

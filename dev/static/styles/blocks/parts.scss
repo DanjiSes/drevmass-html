@@ -1,11 +1,12 @@
 .parts {
 
   &__preview {
+    width: 52%;
     max-width: 570px;
     margin: 0 auto;
     position: relative;
-    padding: 100px 0;
-    
+    padding: 9% 0;
+
     &-circle {
       position: absolute;
       width: 100%;
@@ -25,6 +26,76 @@
         display: block;
         padding-top: 100%;
       }
+    }
+  }
+}
+
+.part {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  .arrow {
+    position: absolute;
+  }
+
+  &__name {
+    font-size: 20px;
+  }
+
+  &__desc {
+    font-weight: 300;
+  }
+
+  &_1 {
+    text-align: right;
+    transform: translate(-420px, -82px);
+    width: 170px;
+
+    .arrow {
+      left: 110%;
+      top: -25px;
+    }
+  }
+
+  &_2 {
+    transform: translate(340px, -50px);
+    width: 130px;
+
+    .arrow {
+      right: 110%;
+      top: 6px;
+    }
+  }
+
+  &_3 {
+    transform: translate(-590px, 80px);
+    width: 200px;
+    text-align: right;
+
+    .arrow {
+      left: 105%;
+      top: 6px;
+    }
+  }
+
+  &_4 {
+    transform: translate(363px, 125px);
+    width: 230px;
+
+    .arrow {
+      right: 105%;
+      top: -15px;
+    }
+  }
+
+  &_5 {
+    transform: translate(163px, 315px);
+    width: 240px;
+
+    .arrow {
+      left: 30px;
+      bottom: 105%;
     }
   }
 }
