@@ -53,6 +53,7 @@
     padding: rem(30px);
     text-decoration: underline;
     position: relative;
+    color: $dark;
 
     &::after {
       content: '';
