@@ -1,3 +1,30 @@
+// Main block
+
+.main {
+  // some
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin-right: -90px;
+  font-weight: 300;
+  margin-left: 60px;
+  margin-bottom: 30px;
+
+  &__item {
+    width: 100%;
+    max-width: 230px;
+    margin-bottom: 30px;
+    margin-right: 90px;
+  }
+}
+
+/**
+* Watch Video Btn Block
+*/
+
 @keyframes watchBlick {
   0% {
     left: -150px;
@@ -21,13 +48,14 @@
   position: relative;
 
   height: 95px;
+  width: 470px;
 
   padding: 25px 30px 25px 5px;
 
   background: linear-gradient(180deg, #00B2A9 0%, #01A199 100%);
   border-radius: 555px;
 
-  box-shadow: 0 4px 0 #1D8C87;
+  box-shadow: 0px 11px 22px rgba(0, 178, 169, 0.33), 0 4px 0 #1D8C87;
 
   &__blick {
     position: absolute;
@@ -62,12 +90,14 @@
   &__preview {
     width: 213px;
     height: 123px;
-    line-height: 123px;
+    line-height: 100px;
 
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
+
+    transform: translateY(3px);
   }
 
   &__btn {
