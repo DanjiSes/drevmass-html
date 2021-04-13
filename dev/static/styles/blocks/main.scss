@@ -1,0 +1,89 @@
+@keyframes watchBlick {
+  0% {
+    left: -150px;
+  }
+
+  20% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.watch {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  position: relative;
+
+  height: 95px;
+
+  padding: 25px 30px 25px 5px;
+
+  background: linear-gradient(180deg, #00B2A9 0%, #01A199 100%);
+  border-radius: 555px;
+
+  box-shadow: 0 4px 0 #1D8C87;
+
+  &__blick {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 555px;
+
+    overflow: hidden;
+    opacity: 0.5;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+  
+      left: -150px;
+      top: 50%;
+  
+      width: 150px;
+      height: 220px;
+  
+      background: linear-gradient(283.83deg, rgba(255, 255, 255, 0) 16.64%, #FFFFFF 50.63%, rgba(255, 255, 255, 0) 88.97%);
+      opacity: 0.3;
+      transform: rotate(21.59deg) translateY(-50%);
+  
+      animation: watchBlick 7s ease-in-out 3s infinite;
+    }
+  }
+  
+  &__preview {
+    width: 213px;
+    height: 123px;
+    line-height: 123px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+  }
+
+  &__btn {
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  &:hover &__btn {
+    opacity: 1;
+  }
+
+  &__label {
+    font-size: rem(20px);
+    font-weight: 700;
+    line-height: rem(24px);
+
+    color: $white;
+  }
+}
