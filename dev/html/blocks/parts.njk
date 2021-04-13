@@ -1,0 +1,47 @@
+{# 
+ # Parts
+ #}
+
+{% set parts = [
+  {
+    name: "Ролик с шипами",
+    descr: "Для более глубокого и интенсивного массажа"
+  },
+  {
+    name: "Рама",
+    descr: "Удерживающий элемент-основа"
+  },
+  {
+    name: "Асимметричный ролик",
+    descr: "Для исправления и профилактики сколиоза"
+  },
+  {
+    name: "Вспомогательные ролики",
+    descr: "Необходимы для стабилизации и облегчения упражнений"
+  },
+  {
+    name: "Основной ролик",
+    descr: "Оказывает точечное воздействие на целевую область спины"
+  }
+] %}
+
+<section class="parts">
+
+  <div class="container">
+    {# Title #}
+    <h2 class="h1 text-center">Массажер-тренажер Древмасс совмещает положительные стороны всех способов и позволяет добиться результата за 7 минут в день</h2>
+    {# Preview #}
+    <div class="parts__preview">
+      <div class="parts__preview-circle"></div>
+      <img src="static/images/content/parts_preview.png" alt="" class="w-100 img-fluid">
+    </div>
+    {# Parts #}
+    {% for p in parts %}
+      <dl class="part part_{{ loop.index }}">
+        <dt class="part__name">{{ p.name }}</dt>
+        <dd class="part__des">{{ p.descr }}</dd>
+      </dl>
+    {% endfor %}
+  </div>
+
+</section>
