@@ -44,11 +44,16 @@
           </figure>
         </div>
         {# Instruction Video #}
-        <div class="video cur-pointer" onclick="this.innerHTML = '{{ embedURL }}'">
+        <div class="video cur-pointer mb-5" onclick="this.innerHTML = '{{ embedURL }}'">
           {# Сюда будет вставляться <iframe> #}
           <div class="video__preview" style="background-image: url('static/images/content/instruct_vid_preview.png')"></div>
           <img class="video__play position-absolute img-fluid" src="static/images/play.svg" alt="">
         </div>
+        {# Youtube Link #}
+        <a href="//youtube.com" class="instruct__youtube-link lead text-dark" target="_blank" style="max-width: 500px;">
+          <img src="static/images/youtube.png" class="img-fluid mr-3" alt="" style="max-width: 70px">
+          <u>Все возможные комплексы упражнений с Древмасс на youtube-канале</u>
+        </a>
       </div>
     </div>
   </div>
