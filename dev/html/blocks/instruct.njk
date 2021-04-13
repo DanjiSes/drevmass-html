@@ -1,12 +1,21 @@
 {% set embedURL = '<iframe width="560" height="315" src="https://www.youtube.com/embed/a5aW5u_FgVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' %}
 
+{% set effects = [
+  "Возобновление движения и восстановление здорового, интенсивного тканевого обмена веществ",
+  "Снятие спазмов с мускулатуры спины и околопозвоночныхглубоких мышц",
+  "Освобождение хрящей и межпозвоночных дисков от передавливания, восстановление их объема и питания",
+  "Снятие болевых рефлексов, освобождение от защемлений",
+  "Профилактика остеохондроза, хронического болевого синдрома",
+  "Исправление осанки и снятие проблем возникающих от сидячего образа жизни"
+] %}
+
 <section class="instruct">
   <div class="container">
     {# Title #}
     <h2 class="h1 mb-5">Чтобы снять боль - просто ложитесь на массажер и прокатывайтесь спиной по роликам по 7 минут в день</h2>
 
     <div class="row">
-      <div class="col-12 col-lg-8">
+      <div class="col-12 col-lg-7 pr-4">
         {# Steps indicator #}
         <div class="d-flex align-items-center justify-content-between mb-2">
           <div style="width: 8.4%;">
@@ -54,6 +63,27 @@
           <img src="static/images/youtube.png" class="img-fluid mr-3" alt="" style="max-width: 70px">
           <u>Все возможные комплексы упражнений с Древмасс на youtube-канале</u>
         </a>
+      </div>
+      <div class="col-12 col-lg-5">
+        <h3 class="text-30 font-weight-light mt-2 mb-4">Лечебные эффекты Древмасс:</h3>
+
+        <div class="instruct__effects p-4">
+          <ul class="list-unstyled font-weight-light">
+            {% for f in effects %}
+              
+              <li class="instruct__effect-item d-flex">
+                <b class="text-20 text-info mr-3" style="line-height: 1;">+</b>
+                <span>{{ f }}</span>
+              </li>
+
+            {% endfor %}
+          </ul>
+
+          <a href="#-" class="btn text-white bg-info rounded-pill px-5 mt-3">
+            <img src="static/images/finger-white.svg" alt="" class="mr-3">
+            <span>Хочу купить Древмасс</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
