@@ -1,0 +1,88 @@
+{%set menu = [
+  {"t": "Как снять боль?", "l": "#"},
+  {"t": "Комплектация", "l": "#"},
+  {"t": "Отзывы", "l": "#"},
+  {"t": "Гарантия", "l": "#"},
+  {"t": "Контакты", "l": "#"}
+]%}
+
+{%set phone = { "t": "+7 999 999 99 99", "l": "+79999999999" } %}
+
+<header class="header">
+  <div class="container-fluid py-2 d-flex align-items-center justify-content-between">
+
+    {# Logo #}
+    <div class="logo">
+      <img src="static/images/logo.png" alt="DREV MASS">
+    </div>
+
+    {# Nav #}
+    <nav class="nav d-none d-lg-block">
+      <ul class="list-unstyled">
+        {% for l in menu %}
+          <li><a href="{{ l.l }}">{{ l.t }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="px-3 d-flex align-items-center">
+      {# Phone #}
+      <a href="tel:{{ phone.l }}"
+        class="phone text-dark font-weight-bold d-none d-lg-block"
+        data-t="{{ phone.t }}">
+        {{ phone.t }}
+      </a>
+
+      <a href="#menu" class="d-lg-none">
+        <svg width="33" height="21" viewBox="0 0 33 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line y1="1" x2="32.9333" y2="1" stroke="black" stroke-width="2"/>
+          <line y1="9.8667" x2="32.9333" y2="9.8667" stroke="black" stroke-width="2"/>
+          <line y1="18.7334" x2="32.9333" y2="18.7334" stroke="black" stroke-width="2"/>
+          <rect y="10.8667" width="32.9333" height="1.26667" fill="#C4C4C4"/>
+          <rect y="19.7334" width="32.9333" height="1.26667" fill="#C4C4C4"/>
+          <rect y="2" width="32.9333" height="1.26667" fill="#C4C4C4"/>
+        </svg>
+      </a>
+
+    </div>
+  
+  </div>
+</header>
+
+<div class="mobile-nav d-flex flex-column justify-content-between py-4 px-5" id="menu">
+  <a href="#close" class="close">
+    <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="11.5739" y1="34.3813" x2="34.382" y2="11.5741" stroke="black" stroke-width="2"/>
+      <line x1="34.3815" y1="34.0416" x2="11.5739" y2="11.234" stroke="black" stroke-width="2"/>
+      <rect x="24.5623" y="22.8076" width="14.8869" height="1.24057" transform="rotate(-45 24.5623 22.8076)" fill="#C4C4C4"/>
+      <rect x="35.0886" y="33.3345" width="14.8869" height="1.24057" transform="rotate(-135 35.0886 33.3345)" fill="#C4C4C4"/>
+      <rect x="22.8076" y="21.0532" width="14.8869" height="1.24057" transform="rotate(-135 22.8076 21.0532)" fill="#C4C4C4"/>
+      <rect x="12.281" y="35.0884" width="14.8869" height="1.24057" transform="rotate(-45 12.281 35.0884)" fill="#C4C4C4"/>
+    </svg>
+
+  </a>
+  <div>
+    {# Logo #}
+    <div class="logo mb-5">
+      <img src="static/images/logo.png" alt="DREV MASS">
+    </div>
+
+    {# Nav #}
+    <nav class="nav mb-4">
+      <ul class="list-unstyled flex-column">
+        {% for l in menu %}
+          <li><a href="{{ l.l }}">{{ l.t }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+
+  {# Phone #}
+  <a href="tel:{{ phone.l }}"
+    class="phone text-dark font-weight-bold"
+    data-t="{{ phone.t }}">
+    {{ phone.t }}
+  </a>
+</div>
+
+<a href="#" class="mobile-nav-overlay"></a>

@@ -1,4 +1,15 @@
 // Colors
 
+$green:   #00b5af;
+
 $dark: #000000;
-$success: #00b5af;
+$primary: $green;
+
+// TODO: Это maybe нужно убрать
+
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 960px,
+  xl: 1140px
+);
