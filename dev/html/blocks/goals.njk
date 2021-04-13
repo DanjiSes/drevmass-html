@@ -1,0 +1,65 @@
+{# 
+ # Блок 3 главные цели
+ #}
+
+{% set goals = [
+  {
+    text: "Снять мышечные блоки и спазмы с околопозвоночных мышц и мускулатуры спины"
+  },
+  {
+    text: "Возобновить циркуляцию крови, лимфы и спинномозговой жидкости"
+  },
+  {
+    text: "Плавно растянуть позвоночник, снизив давление на межпозвоночные диски и напитав их кровью"
+  }
+] %}
+
+<section class="goals">
+  
+  <div class="container">
+
+    {# Title #}
+    <h2 class="h1 mb-3">Три цели, которых нужно добиваться каждый день для <strong class="text-success">избавления и предупреждения от боли в спине*</strong></h2>
+    {# Subtitle #}
+    <blockquote class="mb-5 blockquote opacity-5" style="max-width: 850px;">
+      <p class="mb-0">*Мы не рассматриваем тяжелые патологии и запущенные случаи, которые требуют профессиональной консультации, а те проблемы, которые решают 90% людей приходящих к нам</p>
+    </blockquote>
+    
+    <div class="row">
+      <div class="col-12 col-lg-5">
+        {# Goals list #}
+        <ul class="list-unstyled font-weight-light">
+
+          {% for g in goals %}
+
+            <li class="d-flex align-items-start mb-5">
+              <div class="mr-4">
+                <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.53949" y="0.620605" width="45.8574" height="45.8574" fill="#C4C4C4"/>
+                </svg>
+              </div>
+              <div>{{ g.text }}</div>
+            </li>           
+
+          {% endfor %}
+
+        </ul>
+      </div>
+      <div class="col-12 col-lg-7">
+        {# CTA #}
+        <div class="px-5 py-4 position-relative">
+          <div class="position-absolute rounded" style="z-index: -1; top: 0; left: 0; height: 100%; width: 100vw; background: linear-gradient(90deg, #00B2A9 0%, #00BAC5 100%), #01A199;"></div>
+
+          <p class="lead text-white font-weight-bold mb-4">Достичь этих эффектов возможно разными путями - пролечиться у врача-невролога, проходить курс массажа, подобрать специальные упражнения, а иногда и все вместе.</p>
+          <p class="lead text-white font-weight-bold mb-4">Все это помогает, но вы тратите месяцы и годы времени, тратя по нескольку часов в день и не одну сотню рублей в сумме.</p>
+
+          <a href="#-" class="white-btn text-gray bg-white rounded-pill">
+            <img src="static/images/finger.svg" alt="" class="mr-2">
+            <span>Решить проблему всего за 10,5 часов</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
