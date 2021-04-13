@@ -53,3 +53,46 @@
   </div>
 
 </section>
+
+{% set boxItems = [
+  {
+    img: "bi1",
+    name: "Фиксатор для <br> удобного хранения",
+    descr: "Дополнительная <br>  проработка бедер, <br> ягодиц и ступней"
+  },
+  {
+    img: "bi2",
+    name: "Суджок-массажер <br> для рук",
+    descr: "Позволяет усилить воздействие при занятиях <br> на тренажере"
+  },
+  {
+    img: "bi3",
+    name: "Инструкция и <br> записи уроков",
+    descr: "Полный комплект поможет получить максимум оздоровительного эффекта"
+  },
+  {
+    img: "bi4",
+    name: "Комплект для ухода <br> за массажером",
+    descr: "Для постепенного выправления сколиоза"
+  }
+] %}
+
+<section>
+  <div class="container">
+    {# Title #}
+    <h2 class="h1 text-center mb-5">Что также входит в коробку?</h2>
+    {# Box Items #}
+    <div class="row text-center">
+
+      {% for i in boxItems %}
+        
+        <div class="col-12 col-lg-3">
+          <img class="w-75 img-fluid mb-3" src="static/images/content/{{ i.img }}.png" alt="{{ i.name }}">
+          <h3 class="text-20">{{ i.name | safe }}</h3>
+          <p class="font-weight-light mx-auto" style="max-width: 220px">{{ i.descr | safe  }}</p>
+        </div>
+      
+      {% endfor %}
+    </div>
+  </div>
+</section>
