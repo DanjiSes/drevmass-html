@@ -1,0 +1,95 @@
+{# 
+ # Ways
+ #}
+
+{% set ways = [
+  {
+    img: "static/images/content/w1.png",
+    name: "Регулярные курсы массажа",
+    goods: [
+      "Массаж действительно снимает боль",
+      "Психологическое расслабление"
+    ],
+    bads: [
+      "Необходимо не менее получаса, чтобы достичь расслабляющего эффекта",
+      "Стоимость одного сеанса - от 1500 рублей, курс из 10 сеансов - 15000 рублей",
+      "Необходимо проходить курсы из 10 сеансов не реже чем раз в полгода"
+    ]
+  },
+  {
+    img: "static/images/content/w2.png",
+    name: "Специальные упражнения",
+    goods: [
+      "Практически бесплатно",
+      "Можно выполнять самостоятельно"
+    ],
+    bads: [
+      "Эффект не гарантирован, так как необходима точная техника и регулярность",
+      "Необходимо самостоятельно напоминать себе о тренировках",
+      "Требует ощутимой  силы воли",
+      "Требует времени"
+    ]
+  },
+  {
+    img: "static/images/content/w3.png",
+    name: "Обезболивающие средства",
+    goods: [
+      "Снимают боль быстро",
+      "Все, что нужно - принять препарат"
+    ],
+    bads: [
+      "Маскировка проблемы - боль снимается, причина продолжает развиваться",
+      "Побочные эффекты препаратов и развитие толерантности"
+    ]
+  }
+] %}
+
+<section class="goals">
+  
+  <div class="container">
+    {# Title #}
+    <h2 class="h1 mb-5">Какие существуют способы избавления от боли в спине?</h2>
+    {# Ways #}
+    <div class="row">
+    
+      {% for w in ways %}
+    
+        <div class="col-12 col-lg-4">
+          {# Way #}
+          <div class="py-4 px-4 shadow rounded h-100" style="border-bottom: 10px solid #C6C6C6">
+            {# Preview #}
+            <div class="mx-auto mb-4 rounded-circle overflow-hidden"
+                 style="width: 220px; height: 220px;
+                  box-shadow: inset 0px 4px 11px rgba(0, 0, 0, 0.25);
+                  border: 3px solid #00B2A9;">
+              <img src="{{ w.img }}" alt="{{ w.name }}" class="w-100 img-fluid h-100" style="object-fit: cover;">
+            </div>
+            {# Title #}
+            <h3 class="text-20 mb-3 text-center">{{ w.name }}</h3>
+            {# Goods #}
+            <ul class="list-unstyled">
+              {% for g in w.goods %}
+                <li class="d-flex mb-2">
+                  <b class="text-20 text-success mr-3" style="line-height: 1;">+</b>
+                  <span>{{ g }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+            {# Bads #}
+            <ul class="list-unstyled">
+              {% for b in w.bads %}
+                <li class="d-flex mb-2">
+                  <b class="text-20 text-warning mr-3" style="line-height: 1;">-</b>
+                  <span>{{ b }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+    
+      {% endfor %}
+    
+    </div>
+  </div>
+
+</section>
