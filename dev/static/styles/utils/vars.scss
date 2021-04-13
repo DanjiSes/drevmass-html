@@ -1,8 +1,9 @@
 // Colors
 
 $green:   #00b5af;
+$yellow:  #FFB800;
 
-$dark: #000000;
+$dark:  #000000;
 $primary: $green;
 
 // TODO: Это maybe нужно убрать
@@ -13,3 +14,13 @@ $container-max-widths: (
   lg: 960px,
   xl: 1140px
 );
+
+$headings-font-weight: 700;
+
+.superrem {
+  border-radius: rem(20px);
+}
+
+$border-radius: rem(10px);
+$border-radius-lg: rem(20px);
+$border-radius-sm: rem(6px);

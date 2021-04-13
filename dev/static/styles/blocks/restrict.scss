@@ -1,0 +1,21 @@
+// Restrict blocks
+
+/**
+* Warning
+*/
+
+.warning {
+  padding: 25px 35px;
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(90deg, #00B2A9 0%, #00BAC5 100%);
+
+  border-radius: $border-radius-lg;
+
+  font-size: rem(25px);
+  font-weight: 700;
+  line-height: rem(30px);
+
+  color: $white;
+}
