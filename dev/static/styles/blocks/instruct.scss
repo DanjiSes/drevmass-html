@@ -1,0 +1,47 @@
+.video {
+  @extend .embed-responsive;
+  @extend .embed-responsive-16by9;
+
+  position: relative;
+
+  &__preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $dark;
+      opacity: 0.45;
+      transition: opacity .3s;
+    }
+  }
+
+  &__play {
+    transition: all .5s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__play {
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+
+  &:hover &__preview::after {
+    opacity: 0;
+  }
+}

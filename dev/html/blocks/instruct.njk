@@ -1,0 +1,55 @@
+{% set embedURL = '<iframe width="560" height="315" src="https://www.youtube.com/embed/a5aW5u_FgVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' %}
+
+<section class="instruct">
+  <div class="container">
+    {# Title #}
+    <h2 class="h1 mb-5">Чтобы снять боль - просто ложитесь на массажер и прокатывайтесь спиной по роликам по 7 минут в день</h2>
+
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        {# Steps indicator #}
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div style="width: 8.4%;">
+            <img class="img-fluid mr-2" src="static/images/content/is1.png" alt="">
+          </div>
+          <div style="width: 21.4%; margin-top: -1%;">
+            <img class="img-fluid" src="static/images/content/is_arrow.svg" alt="">
+          </div>
+          <div style="width: 8.4%;">
+            <img class="img-fluid mr-2" src="static/images/content/is2.png" alt="">
+          </div>
+          <div style="width: 21.4%; margin-top: -1%;">
+            <img class="img-fluid" src="static/images/content/is_arrow.svg" alt="">
+          </div>
+          <div style="width: 8.4%;">
+            <img class="img-fluid mr-2" src="static/images/content/is3.png" alt="">
+          </div>
+          <div style="width: 21.4%; margin-top: -1%;">
+            <img class="img-fluid" src="static/images/content/is_arrow.svg" alt="">
+          </div>
+        </div>
+        {# Steps Previevs #}
+        <div class="d-flex align-items-center justify-content-between mb-5">
+          <figure style="width: 31%;">
+            <img src="static/images/content/instruct1.png" alt="Ложитесь" class="w-100 img-fluid">
+            <figcaption class="font-weight-light mt-2">Ложитесь</figcaption>
+          </figure>
+          <figure style="width: 31%;">
+            <img src="static/images/content/instruct2.png" alt="Ложитесь" class="w-100 img-fluid">
+            <figcaption class="font-weight-light mt-2">Двигаетесь вперед-назад</figcaption>
+          </figure>
+          <figure style="width: 31%;">
+            <img src="static/images/content/instruct3.png" alt="Ложитесь" class="w-100 img-fluid">
+            <figcaption class="font-weight-light mt-2">Ложитесь</figcaption>
+          </figure>
+        </div>
+        {# Instruction Video #}
+        <div class="video cur-pointer" onclick="this.innerHTML = '{{ embedURL }}'">
+          {# Сюда будет вставляться <iframe> #}
+          <div class="video__preview" style="background-image: url('static/images/content/instruct_vid_preview.png')"></div>
+          <img class="video__play position-absolute img-fluid" src="static/images/play.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
