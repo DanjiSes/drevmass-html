@@ -52,21 +52,7 @@
     align-items: center;
     padding: rem(30px);
     text-decoration: underline;
-    position: relative;
     color: $dark;
-
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      right: 0;
-      width: 100vw;
-      height: 100%;
-      background: $light;
-      border-radius: 555px;
-    }
   }
 
   &__effects {
