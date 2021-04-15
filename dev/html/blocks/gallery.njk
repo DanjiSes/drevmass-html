@@ -1,0 +1,20 @@
+{% set colors = [1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"] %}
+
+<section>
+  <div class="container">
+    {# Title #}
+    <h2 class="h1 mb-3">Фотографии с собственного производства</h2>
+    {# Sub #}
+    <p class="lead mb-5">Вы покупаете устройство по цене напрямую от производителя, без посредников</p>
+    {# Gallery #}
+    <div class="gallery">
+      
+      {% for i in range(8) %}
+        <a class="gallery__item js-gallery-img" href="static/images/content/g{{i+1}}.png">
+          <img src="static/images/content/g{{i+1}}.png" alt="Фото с производства" class="img-fluid w-100 h-100" style="object-fit: cover;">
+        </a>
+      {% endfor %}
+      
+    </div>
+  </div>
+</section>
