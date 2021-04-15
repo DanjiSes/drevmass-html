@@ -1,0 +1,47 @@
+.serts {
+  padding-top: 80px;
+
+  &__img {
+    width: 450px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &-circle {
+      position: absolute;
+      z-index: -1;
+
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 113%;
+
+      background: $white;
+      box-shadow: 0px 22px 22px rgba(0, 0, 0, 0.11);
+      border-radius: 50%;
+
+      &::after {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+    }
+  }
+
+  &__title {
+    line-height: 1.35;
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    font-size: rem(20px);
+    font-weight: 300;
+    margin-bottom: 27px;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+}
