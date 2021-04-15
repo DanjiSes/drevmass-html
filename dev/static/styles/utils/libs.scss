@@ -42,4 +42,18 @@
 //  @import "../../../../node_modules/bootstrap/scss/spinners";
  @import "../../../../node_modules/bootstrap/scss/utilities";
 //  @import "../../../../node_modules/bootstrap/scss/print";
+
+/**
+* Slick Corusel
+*/
  
+ @import "../../../../node_modules/slick-carousel/slick/slick.scss";
+ @import "../../../../node_modules/slick-carousel/slick/slick-theme.scss";
+ .slick-slide { outline: none; }
+ a {outline: none; }
+
+/**
+* Magnific Popup
+*/
+
+@import "../../../../node_modules/magnific-popup/dist/magnific-popup";
