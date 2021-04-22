@@ -1,0 +1,80 @@
+<section class="order">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12 col-lg-5">
+        {# Title #}
+        <h2 class="h1" style="max-width: 400px;">Заказать Древмасс c доставкой</h2>
+      </div>
+      <div class="col-12 col-lg-7">
+        {# Sub #}
+        <p class="lead mt-2">
+          Вы оплачиваете товар только при получении после осмотра. <br> Если вы не избавитесь от боли в спине за 3 месяца - мы вернем деньги! <br> Гарантии - 1 год на устройство, 5 лет - на раму. 15 лет - срок службы
+        </p>
+      </div>
+    </div>
+
+    <div class="product rounded-lg shadow-lg">
+      {# Title #}
+      <h3 class="h2 mb-1">Все включено <small class="opacity-5 font-weight-light text-16">(выгода до 25%)</small></h3>
+      {# Exists #}
+      <div class="mb-3">
+        <span class="align-middle font-weight-light">Товар в наличии:</span>
+        <svg width="50" height="9" viewBox="0 0 50 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="align-middle">
+          <circle cx="4.79094" cy="4.67037" r="3.98775" fill="#00B2A9"/>
+          <circle cx="14.9776" cy="4.67037" r="3.98775" fill="#00B2A9"/>
+          <circle cx="25.1641" cy="4.67037" r="3.98775" fill="#00B2A9"/>
+          <circle cx="35.3506" cy="4.67037" r="3.98775" fill="#00B2A9"/>
+          <circle cx="45.5372" cy="4.67037" r="3.98775" fill="#00B2A9"/>
+        </svg>
+      </div>
+      
+      <div class="row">
+        <div class="col-12 col-lg-7">
+          {# Components #}
+          <div class="position-relative pr-5 py-3 d-inline-block mb-3">
+            <div class="bgout-gray rounded-lg" style="right: 0; opacity: 0.2;"></div>
+            <ul class="list-unstyled font-weight-light list-checked mb-0">
+              <li>5,6,7 роликовый Древмасс</li>
+              <li>Ролик с шипами</li>
+              <li>Диск с методикой занятий</li>
+            </ul>
+          </div>
+          {# Description #}
+          <p class="font-weight-light" style="max-width: 467px;">Набор включает в себя ролик с шипами Древмасс. Занятия в данной комплектации считаются более эффективными и усиленными за счет аккупунктурного воздействия ролика с шипами и более глубокой проработки гладким активным роликом.</p>
+          {# Cards #}
+          <div class="row mx-n2">
+            {% for i in range(3) %}
+
+              <div class="col-12 col-lg-4 px-2">
+                <div class="h-100 px-4 py-3 bg-light rounded">
+                  {# Product name #}
+                  <h4 class="h6 text-dark" style="opacity: 0.6; max-width: 98px;">
+                    Комплект с {{ loop.index + 4 }}-роликовым тренажером
+                  </h4>
+                  {# Size #}
+                  <div class="bg-white px-2 py-1 text-13 font-weight-light d-inline-flex align-items-center rounded-pill">
+                    <img src="static/images/ruler.svg" alt="линейка" class="img-fluid mr-1" style="width: 9px">
+                    <span>рост до 185</span>
+                  </div>
+                  {# Price #}
+                  <div class="lead font-weight-bold mt-3">
+                    <span class="text-dark text-dash mr-2 text-nowrap"
+                          style="opacity: 0.2; font-size: 15px; vertical-align: top;">
+                      12 490 ₽
+                    </span>
+                    <span class="text-info text-nowrap">11 990 ₽</span>
+                  </div>
+                  {# Order button #}
+                  <a href="#-" class="btn text-white bg-info rounded-pill px-3 mt-3 w-100">
+                    Заказать
+                  </a>
+                </div>
+              </div>
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
