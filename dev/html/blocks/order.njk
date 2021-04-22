@@ -42,27 +42,49 @@
           {# Description #}
           <p class="font-weight-light" style="max-width: 467px;">Набор включает в себя ролик с шипами Древмасс. Занятия в данной комплектации считаются более эффективными и усиленными за счет аккупунктурного воздействия ролика с шипами и более глубокой проработки гладким активным роликом.</p>
           {# Cards #}
+
+          {% set ds = [
+            {
+              name: "Комплект с 5-роликовым тренажером",
+              size: "рост до 185",
+              oldPrice: "12 490 ₽",
+              newPrice: "11 990 ₽"
+            },
+            {
+              name: "Комплект с 6-роликовым тренажером",
+              size: "рост 186-205",
+              oldPrice: "13 490 ₽",
+              newPrice: "12 990 ₽"
+            },
+            {
+              name: "Комплект с 7-роликовым тренажером",
+              size: "рост от 206",
+              oldPrice: "14 490 ₽",
+              newPrice: "13 990 ₽"
+            }
+          ] %}
+
           <div class="row mx-n2">
-            {% for i in range(3) %}
+            {% for i in ds %}
 
               <div class="col-12 col-lg-4 px-2 mb-3">
                 <div class="h-100 px-4 py-3 bg-light rounded">
                   {# Product name #}
                   <h4 class="h6 text-dark" style="opacity: 0.6; max-width: 96px;">
-                    Комплект с {{ loop.index + 4 }}-роликовым тренажером
+                    {{ i.name }}
                   </h4>
                   {# Size #}
                   <div class="bg-white px-2 py-1 text-13 font-weight-light d-inline-flex align-items-center rounded-pill">
                     <img src="static/images/ruler.svg" alt="линейка" class="img-fluid mr-1" style="width: 9px">
-                    <span>рост до 185</span>
+                    <span>{{ i.size }}</span>
                   </div>
                   {# Price #}
                   <div class="lead font-weight-bold mt-3">
                     <span class="text-dark text-dash mr-2 text-nowrap"
                           style="opacity: 0.2; font-size: 15px; vertical-align: top;">
-                      12 490 ₽
+                      {{ i.oldPrice }}
                     </span>
-                    <span class="text-info text-nowrap">11 990 ₽</span>
+                    <span class="text-info text-nowrap">{{ i.newPrice }}</span>
                   </div>
                   {# Order button #}
                   <a href="#" class="btn text-white bg-info rounded-pill px-3 mt-3 w-100">
@@ -169,7 +191,7 @@
           <div class="rounded shadow-lg overflow-hidden text-center">
             {# Img #}
             <div style="padding-top: 60%;" class="position-relative">
-              <img src="static/images/content/p1.png" alt="{{ i.name }}" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
+              <img src="static/images/content/p{{ loop.index }}.png" alt="{{ i.name }}" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
             </div>
             <div class="p-3">
               {# Product name #}

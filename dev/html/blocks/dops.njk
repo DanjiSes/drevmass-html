@@ -1,0 +1,57 @@
+{% set products = [
+  {
+    name: "Коврик с шипами Древмасс",
+    des: "Дополнительная проработка бедер, ягодиц и ступней",
+    price: "2 000 ₽"
+  },
+  {
+    name: "Ролик с шипами Древмасс",
+    des: "Позволяет усилить воздействие при занятиях на тренажере",
+    price: "2 500 ₽"
+  },
+  {
+    name: "Ролик для профилактики и лечения сколиоза",
+    des: "Для постепенного выправления сколиоза",
+    price: "2 000 ₽"
+  }
+] %}
+
+<section class="dops">
+  <div class="container">
+    
+    {# Title #}
+    <h2 class="h2 text-center mb-5">
+      Получите максимум от вашего массажера-тренажера Древмасс!
+    </h2>
+
+    <div class="row">
+      {% for d in products %}
+
+        {# Card #}
+        <div class="col-12 col-lg-4">
+          <div class="rounded shadow-lg overflow-hidden text-center">
+            
+            <div style="padding-top: 60%;" class="position-relative">
+              <img src="static/images/content/d{{ loop.index }}.png" alt="{{ d.name }}" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
+            </div>
+            <div class="p-3">
+              {# Title #}
+              <h3 class="h5">{{ d.name }}</h3>
+              {# Desc #}
+              <p>{{ d.des }}</p>
+              {# Price #}
+              <div class="h3 font-weight-bold">
+                <span class="text-info text-nowrap">{{ d.price }}</span>
+              </div>
+              {# Order buttno #}
+              <a href="#" class="btn text-white bg-info rounded-pill px-5 mt-3 mb-2">
+                Заказать
+              </a>
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
