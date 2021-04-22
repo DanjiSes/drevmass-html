@@ -74,6 +74,27 @@
             {% endfor %}
           </div>
         </div>
+        <div class="col-12 col-lg-5">
+          {# Bit preview #}
+          <div style="padding-top: 100%;" class="position-relative d-block">
+            <img src="static/images/content/op1-big.png" alt="Фотография тренажера Древмасс в увеличеном размере" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;" id="preview">
+          </div>
+          {# Small previews #}
+          <div class="d-flex mx-n2 mt-3 js-previews">
+            {% for i in range(5) %}
+
+              {% set url = "static/images/content/op" + loop.index + ".png" %}
+              {% set urlBig = "static/images/content/op" + loop.index + "-big.png" %}
+              
+              <div class="w-100 mx-2 cur-pointer border-info {% if loop.index == 1 %}border{% endif %}" onclick="(function() { document.getElementById('preview').src = '{{ urlBig }}'; $('.js-previews .border').removeClass('border'); $(this).addClass('border'); }).bind(this)()">
+                <div style="padding-top: 100%;" class="bg-light position-relative">
+                  <img src="{{ url }}" alt="Миниатюра фотографии тренажера Древмасс" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
+                </div>
+              </div>
+
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
   </div>
