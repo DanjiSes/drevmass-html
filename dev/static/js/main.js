@@ -53,6 +53,7 @@ $(function() {
     slidesToShow: 1,
     slidesToScroll: 1,
     asNavFor: '.js-previewsSlider',
+    fade: true
   });
 
   $('.js-previewsSlider').slick({

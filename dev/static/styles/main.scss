@@ -31,6 +31,13 @@ a:hover {
 	color: $info;
 }
 
+.js-reviews-slider:not(.slick-initialized),
+.js-bigPreviewSlider:not(.slick-initialized),
+.js-previewsSlider:not(.slick-initialized),
+.slick-slider:not(.slick-initialized) {
+	display: none;
+}
+
 @import "blocks/_blocks";
 
 // Responsive styles
