@@ -1,0 +1,29 @@
+@include media-breakpoint-down('lg') {
+  // tmp code
+  body { background: $light; }
+
+  html {
+    font-size: 15px;
+  }
+
+  h1, .h1 {
+    font-size: 2.7rem;
+  }
+
+  @include main--lg();
+}
+
+@include media-breakpoint-down('md') {
+  // tmp code
+  body { background: $white; }
+}
+
+@include media-breakpoint-down('sm') {
+  // tmp code
+  body { background: $light; }
+}
+
+@include media-breakpoint-down('xs') {
+  // tmp code
+  body { background: $white; }
+}
