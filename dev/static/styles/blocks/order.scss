@@ -4,6 +4,10 @@
   .lead:first-of-type {
     font-size: rem(19px);
   }
+
+  .slick-current {
+    border-color: $info !important;
+  }
 }
 
 .product {

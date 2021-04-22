@@ -45,4 +45,20 @@ $(function() {
       tError: '<a href="%url%">Запрос</a> венул ошибку.'
     }
   });
+
+  // Order block sliders
+
+  $('.js-bigPreviewSlider').slick({
+    lazyLoad: 'ondemand',
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: '.js-previewsSlider',
+  });
+
+  $('.js-previewsSlider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: '.js-bigPreviewSlider',
+    focusOnSelect: true,
+  });
 });

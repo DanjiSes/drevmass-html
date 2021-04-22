@@ -45,7 +45,7 @@
           <div class="row mx-n2">
             {% for i in range(3) %}
 
-              <div class="col-12 col-lg-4 px-2">
+              <div class="col-12 col-lg-4 px-2 mb-3">
                 <div class="h-100 px-4 py-3 bg-light rounded">
                   {# Product name #}
                   <h4 class="h6 text-dark" style="opacity: 0.6; max-width: 98px;">
@@ -75,18 +75,40 @@
           </div>
         </div>
         <div class="col-12 col-lg-5">
-          {# Bit preview #}
-          <div style="padding-top: 100%;" class="position-relative d-block">
-            <img src="static/images/content/op1-big.png" alt="Фотография тренажера Древмасс в увеличеном размере" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;" id="preview">
+          {# Bit preview slider #}
+          <div class="js-bigPreviewSlider">
+            {% for i in range(5) %}
+
+              {% set url = "static/images/content/op" + loop.index + "-big.png" %}
+              {% set smUrl = "static/images/content/op" + loop.index + ".png" %}
+
+              <div>
+                <div style="padding-top: 100%;" class="position-relative d-block">
+                  <img data-lazy="{{ url }}" src="{{ smUrl }}" alt="Фотография тренажера Древмасс в увеличеном размере" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
+                </div>
+              </div>
+
+              <div>
+                <div style="padding-top: 100%;" class="position-relative d-block">
+                  <img data-lazy="{{ url }}" src="{{ smUrl }}" alt="Фотография тренажера Древмасс в увеличеном размере" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
+                </div>
+              </div>
+
+            {% endfor %}
           </div>
           {# Small previews #}
-          <div class="d-flex mx-n2 mt-3 js-previews">
+          <div class="mt-3 js-previewsSlider">
             {% for i in range(5) %}
 
               {% set url = "static/images/content/op" + loop.index + ".png" %}
-              {% set urlBig = "static/images/content/op" + loop.index + "-big.png" %}
               
-              <div class="w-100 mx-2 cur-pointer border-info {% if loop.index == 1 %}border{% endif %}" onclick="(function() { document.getElementById('preview').src = '{{ urlBig }}'; $('.js-previews .border').removeClass('border'); $(this).addClass('border'); }).bind(this)()">
+              <div class="mx-2 cur-pointer border">
+                <div style="padding-top: 100%;" class="bg-light position-relative">
+                  <img src="{{ url }}" alt="Миниатюра фотографии тренажера Древмасс" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
+                </div>
+              </div>
+              
+              <div class="mx-2 cur-pointer border">
                 <div style="padding-top: 100%;" class="bg-light position-relative">
                   <img src="{{ url }}" alt="Миниатюра фотографии тренажера Древмасс" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
                 </div>
