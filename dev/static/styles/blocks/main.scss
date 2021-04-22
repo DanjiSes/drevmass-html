@@ -179,9 +179,96 @@
 
   .features {
     margin-left: 15px;
+    margin-right: -50px;
 
     &__item {
       margin-right: 50px;
     }
   }
 }
+
+
+@mixin main--md() {
+  .main-image {
+    width: 590px;
+    top: 8%;
+    right: 49%;
+  }
+
+  .main {
+    .blockquote {
+      margin-bottom: 296px !important;
+    }
+  }
+}
+
+@mixin main--sm() {
+  .main-image {
+    width: 490px;
+    top: 8%;
+    right: 40%;
+  }
+
+  .features {
+    margin-left: 0;
+  }
+
+  .watch {
+
+    &__label {
+      font-size: 1.45rem;
+    }
+  }
+}
+
+@mixin main--xs() {
+  .main-image {
+    position: relative;
+    top: unset;
+    right: unset;
+    transform: none;
+    width: 110%;
+    margin-left: -10%;
+    margin-top: -10%;
+    margin-bottom: -25%;
+  }
+
+  .main {
+    padding-bottom: 50px;
+
+    .blockquote {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .features {
+    margin-right: -5%;
+
+    &__item {
+      width: 45%;
+      margin-right: 5%;
+    }
+  }
+
+  .watch {
+    display: inline-flex;
+    max-width: 100%;
+    width: auto;
+    height: 65px;
+    line-height: 56px;
+
+    &__preview {
+      width: 142px;
+      height: 82px;
+    }
+
+    &__label {
+      font-size: rem(14px);
+    }
+
+    &__btn {
+      margin-top: -10px;
+    }
+  }
+}
+

@@ -16,14 +16,36 @@
 @include media-breakpoint-down('md') {
   // tmp code
   body { background: $white; }
+
+  html {
+    font-size: 14px;
+  }
+
+  @include main--md();
 }
 
 @include media-breakpoint-down('sm') {
   // tmp code
   body { background: $light; }
+
+  html {
+    font-size: 13px;
+  }
+
+  h1, .h1 {
+    font-size: 2.4rem;
+  }
+
+  @include main--sm();
 }
 
 @include media-breakpoint-down('xs') {
   // tmp code
   body { background: $white; }
+
+  html {
+    font-size: 12px;
+  }
+
+  @include main--xs();
 }
