@@ -14,6 +14,7 @@
   @include main--lg();
   @include restrict--lg();
   @include goals--lg();
+  @include ways--lg();
 }
 
 @include media-breakpoint-down('md') {
@@ -28,6 +29,7 @@
   @include main--md();
   @include restrict--md();
   @include goals--md();
+  @include ways--md();
 }
 
 @include media-breakpoint-down('sm') {
@@ -46,6 +48,7 @@
   @include main--sm();
   @include restrict--sm();
   @include goals--sm();
+  @include ways--sm();
 }
 
 @include media-breakpoint-down('xs') {
@@ -60,4 +63,5 @@
   @include main--xs();
   @include restrict--xs();
   @include goals--xs();
+  @include ways--xs();
 }
