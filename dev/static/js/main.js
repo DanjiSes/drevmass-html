@@ -6,6 +6,8 @@ $(function() {
     centerMode: true,
     centerPadding: '80px',
     slidesToScroll: 5,
+    arrows: false,
+    dots: false,
     responsive: [
       {
         breakpoint: 768,
@@ -67,7 +69,9 @@ $(function() {
     slidesToShow: 1,
     slidesToScroll: 1,
     asNavFor: '.js-previewsSlider',
-    fade: true
+    fade: true,
+    arrows: false,
+    dots: false,
   });
 
   $('.js-previewsSlider').slick({
@@ -75,5 +79,7 @@ $(function() {
     slidesToScroll: 1,
     asNavFor: '.js-bigPreviewSlider',
     focusOnSelect: true,
+    arrows: false,
+    dots: false,
   });
 });
