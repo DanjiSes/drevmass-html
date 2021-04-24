@@ -26,7 +26,7 @@ body::before {
   bottom: 5px;
   font-weight: 700;
   padding: 3px 5px;
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
   opacity: .7;
   border-radius: 4px;
@@ -34,7 +34,7 @@ body::before {
 }
 
 body::before, body::after {
-  display: none;
+  // display: none;
 }
 
 @include media-breakpoint-down('lg') {
@@ -54,6 +54,7 @@ body::before, body::after {
   @include restrict--lg();
   @include goals--lg();
   @include ways--lg();
+  @include parts--lg();
   @include instruct--lg();
   @include serts--lg();
   @include haranty--lg();
@@ -73,6 +74,7 @@ body::before, body::after {
   @include restrict--md();
   @include goals--md();
   @include ways--md();
+  @include parts--md();
   @include instruct--md();
   @include serts--md();
   @include haranty--md();
@@ -96,6 +98,7 @@ body::before, body::after {
   @include restrict--sm();
   @include goals--sm();
   @include ways--sm();
+  @include parts--sm();
   @include instruct--sm();
   @include serts--sm();
   @include haranty--sm();
@@ -115,6 +118,7 @@ body::before, body::after {
   @include restrict--xs();
   @include goals--xs();
   @include ways--xs();
+  @include parts--xs();
   @include instruct--xs();
   @include serts--xs();
   @include haranty--xs();
