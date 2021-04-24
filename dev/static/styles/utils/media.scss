@@ -33,6 +33,10 @@ body::before {
   z-index: 9999999;
 }
 
+body::before, body::after {
+  display: none;
+}
+
 @include media-breakpoint-down('lg') {
   // TODO: Удалить следующую строчку на продакшене
   body::after { content: 'lg'; }
