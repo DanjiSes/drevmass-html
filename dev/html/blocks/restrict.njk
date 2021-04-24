@@ -3,33 +3,37 @@
  #}
 
 {% set bgImage = 'static/images/content/restrict-bg.png' %}
+{% set bgImageDots = 'static/images/restrict-dots.svg' %}
 
 <section class="restrict">
-  
-  {# Title #}
-  <h2 class="h1 mb-3 text-center">Боль в спине - <strong class="text-warning">ограничитель вашей жизни</strong></h2>
-  {# Description #}
-  <p class="text-center lead mx-auto" style="max-width: 902px">У нас принято терпеть и не решать проблему боли в спине. Постенно боль усугубляется, и человек начинает выстраивать свою активность и быт вокруг нее. К чему это приводит:</p>
-  {# Results #}
-  <div class="restricts container">
-    <div class="restricts__img">
-      <img src="{{ bgImage }}" alt="" class="w-100 img-fluid">
+
+  <div class="container">
+    {# Title #}
+    <h2 class="h1 mb-3 text-center mx-auto">Боль в спине - <strong class="text-warning">ограничитель вашей жизни</strong></h2>
+    {# Description #}
+    <p class="text-center lead mx-auto" style="max-width: 902px">У нас принято терпеть и не решать проблему боли в спине. Постенно боль усугубляется, и человек начинает выстраивать свою активность и быт вокруг нее. К чему это приводит:</p>
+    {# Results #}
+    <div class="restricts">
+      <div class="restricts__img">
+        <img src="{{ bgImageDots }}" alt="" class="d-none d-lg-inline w-100 img-fluid position-absolute" style="left: 0; top: 0;">
+        <img src="{{ bgImage }}" alt="" class="w-100 img-fluid">
+      </div>
+      <ul class="restricts__list list-unstyled">
+        <li class="restricts__item">Регулярная покупка и прием обезболивающих</li>
+        <li class="restricts__item">Сложнее сконцентрироваться на работе, сниженная работоспособность</li>
+        <li class="restricts__item">Сложнее заниматься любимыми увлечениями и спортом</li>
+        <li class="restricts__item">Сложнее получать простые радости семейной жизни </li>
+        <li class="restricts__item">Постоянные траты на врачей, массажистов и другие процедуры</li>
+        <li class="restricts__item">Приходится отказываться от прогулок, путешествий, развлечений</li>
+        <li class="restricts__item">Ограничение подвижности в спине и суставах, приходится двигаться осторожно</li>
+        <li class="restricts__item">Ускоряется износ позвоночника и возникает риск хронических проблем</li>
+      </ul>
     </div>
-    <ul class="restricts__list list-unstyled">
-      <li class="restricts__item">Регулярная покупка и прием обезболивающих</li>
-      <li class="restricts__item">Сложнее сконцентрироваться на работе, сниженная работоспособность</li>
-      <li class="restricts__item">Сложнее заниматься любимыми увлечениями и спортом</li>
-      <li class="restricts__item">Сложнее получать простые радости семейной жизни </li>
-      <li class="restricts__item">Постоянные траты на врачей, массажистов и другие процедуры</li>
-      <li class="restricts__item">Приходится отказываться от прогулок, путешествий, развлечений</li>
-      <li class="restricts__item">Ограничение подвижности в спине и суставах, приходится двигаться осторожно</li>
-      <li class="restricts__item">Ускоряется износ позвоночника и возникает риск хронических проблем</li>
-    </ul>
+    {# Quote #}
+    <blockquote class="warning mx-auto" style="max-width: 800px">
+      <img src="static/images/warning.svg" alt="" class="warning__img img-fluid mr-3 mb-3 mb-sm-0">
+      <p class="mb-0">Не попасть в этот порочный круг (либо выбраться из него) возможно, только решая причины возникновения боли</p>
+    </blockquote>
   </div>
-  {# Quote #}
-  <blockquote class="warning mx-auto" style="max-width: 800px">
-    <img src="static/images/warning.svg" alt="" class="mr-3">
-    <p class="mb-0">Не попасть в этот порочный круг (либо выбраться из него) возможно, только решая причины возникновения боли</p>
-  </blockquote>
 
 </section>
