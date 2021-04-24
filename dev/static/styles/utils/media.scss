@@ -13,6 +13,7 @@
   // Includes
   @include main--lg();
   @include restrict--lg();
+  @include goals--lg();
 }
 
 @include media-breakpoint-down('md') {
@@ -26,6 +27,7 @@
   // Includes
   @include main--md();
   @include restrict--md();
+  @include goals--md();
 }
 
 @include media-breakpoint-down('sm') {
@@ -43,6 +45,7 @@
   // Includes
   @include main--sm();
   @include restrict--sm();
+  @include goals--sm();
 }
 
 @include media-breakpoint-down('xs') {
@@ -56,4 +59,5 @@
   // Includes
   @include main--xs();
   @include restrict--xs();
+  @include goals--xs();
 }
