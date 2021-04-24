@@ -51,6 +51,8 @@ body::before {
   @include goals--lg();
   @include ways--lg();
   @include instruct--lg();
+  @include serts--lg();
+  @include haranty--lg();
 }
 
 @include media-breakpoint-down('md') {
@@ -67,6 +69,8 @@ body::before {
   @include goals--md();
   @include ways--md();
   @include instruct--md();
+  @include serts--md();
+  @include haranty--md();
 }
 
 @include media-breakpoint-down('sm') {
@@ -87,6 +91,8 @@ body::before {
   @include goals--sm();
   @include ways--sm();
   @include instruct--sm();
+  @include serts--sm();
+  @include haranty--sm();
 }
 
 @include media-breakpoint-down('xs') {
@@ -103,4 +109,6 @@ body::before {
   @include goals--xs();
   @include ways--xs();
   @include instruct--xs();
+  @include serts--xs();
+  @include haranty--xs();
 }

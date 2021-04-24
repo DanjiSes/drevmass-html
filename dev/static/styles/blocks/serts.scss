@@ -8,6 +8,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    z-index: -1;
 
     &-circle {
       position: absolute;
@@ -34,6 +35,7 @@
   &__title {
     line-height: 1.35;
     margin-bottom: 40px;
+    max-width: 590px;
   }
 
   &__text {
@@ -43,6 +45,51 @@
 
     &:last-of-type {
       margin-bottom: 40px;
+    }
+  }
+}
+
+@mixin serts--lg() {
+  
+}
+
+@mixin serts--md() {
+  .serts {
+
+    &__title {
+      max-width: 575px;
+    }
+
+    &__img {
+      right: -15%;
+    }
+  }
+}
+
+@mixin serts--sm() {
+  .serts {
+
+    &__img {
+      width: 300px;
+      top: 74%;
+      right: -19%;
+    }
+  }
+}
+
+@mixin serts--xs() {
+  .serts {
+
+    &__img {
+      width: 100%;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      opacity: .2;
+
+      &-circle {
+        display: none;
+      }
     }
   }
 }
