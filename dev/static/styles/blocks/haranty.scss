@@ -7,7 +7,7 @@
   }
 
   &__sub {
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
   }
 
   &__text {
@@ -29,5 +29,13 @@
 }
 
 @mixin haranty--xs() {
+  .haranty {
 
+    &__contacts {
+
+      img {
+        width: 20px;
+      }
+    }
+  }
 }

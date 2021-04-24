@@ -21,10 +21,20 @@
 {% block scripts %}
 	
 <script>
-	// На размее sm перемещаю блок с лечебными эффектами в левую колонку
   $(function() {
-		if (window.innerWidth > 992) return;
-    $('#js-healthEffects').attr('class', 'position-relative').insertAfter('#js-stepsPreviews');
+		// MD
+		if (window.innerWidth <= 992) {
+			// Престановки в блоке с лечебными эффектами
+			$('#js-healthEffects')
+				.attr('class', 'position-relative')
+				.insertAfter('#js-stepsPreviews');
+
+			// Перемещения в блоке гарантии
+			$('.haranty__title').prependTo('.haranty > .container');
+			$('.haranty__sub').clone().insertAfter('.haranty__title');
+		}
+
+		
   });
 </script>
 
