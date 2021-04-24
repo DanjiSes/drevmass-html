@@ -34,17 +34,17 @@
 
   &__title {
     line-height: 1.35;
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
     max-width: 590px;
   }
 
   &__text {
     font-size: rem(20px);
     font-weight: 300;
-    margin-bottom: 27px;
+    margin-bottom: rem(27px);
 
     &:last-of-type {
-      margin-bottom: 40px;
+      margin-bottom: rem(40px);
     }
   }
 }
