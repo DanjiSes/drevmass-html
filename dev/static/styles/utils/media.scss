@@ -1,5 +1,5 @@
 @include media-breakpoint-down('lg') {
-  // tmp code
+  // TODO: Удалить следующую строчку на продакшене
   body { background: $light; }
 
   html {
@@ -10,7 +10,9 @@
     font-size: 2.7rem;
   }
 
+  // Includes
   @include main--lg();
+  @include restrict--lg();
 }
 
 @include media-breakpoint-down('md') {
@@ -21,11 +23,13 @@
     font-size: 14px;
   }
 
+  // Includes
   @include main--md();
+  @include restrict--md();
 }
 
 @include media-breakpoint-down('sm') {
-  // tmp code
+  // TODO: Удалить следующую строчку на продакшене
   body { background: $light; }
 
   html {
@@ -36,16 +40,20 @@
     font-size: 2.4rem;
   }
 
+  // Includes
   @include main--sm();
+  @include restrict--sm();
 }
 
 @include media-breakpoint-down('xs') {
-  // tmp code
+  // TODO: Удалить следующую строчку на продакшене
   body { background: $white; }
 
   html {
     font-size: 12px;
   }
 
+  // Includes
   @include main--xs();
+  @include restrict--xs();
 }
