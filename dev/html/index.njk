@@ -19,4 +19,13 @@
 {% endblock %}
 
 {% block scripts %}
+	
+<script>
+	// На размее sm перемещаю блок с лечебными эффектами в левую колонку
+  $(function() {
+		if (window.innerWidth > 992) return;
+    $('#js-healthEffects').attr('class', 'position-relative').insertAfter('#js-stepsPreviews');
+  });
+</script>
+
 {% endblock %}

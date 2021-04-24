@@ -1,6 +1,41 @@
+// TODO: Удалить этот код на продакшене
+body::after {
+  position: fixed;
+  content: 'xl';
+  display: block;
+  background: $info;
+  color: $secondary;
+  left: 5px;
+  bottom: 5px;
+  font-weight: 700;
+  padding: 3px 5px;
+  font-size: 20px;
+  text-transform: uppercase;
+  opacity: .5;
+  border-radius: 4px;
+  z-index: 9999999;
+}
+
+body::before {
+  position: fixed;
+  content: '❮❮ При публикации этой надписи не будет';
+  display: block;
+  background: $white;
+  color: $secondary;
+  left: 45px;
+  bottom: 5px;
+  font-weight: 700;
+  padding: 3px 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: .7;
+  border-radius: 4px;
+  z-index: 9999999;
+}
+
 @include media-breakpoint-down('lg') {
   // TODO: Удалить следующую строчку на продакшене
-  body { background: $light; }
+  body::after { content: 'lg'; }
 
   html {
     font-size: 15px;
@@ -15,11 +50,12 @@
   @include restrict--lg();
   @include goals--lg();
   @include ways--lg();
+  @include instruct--lg();
 }
 
 @include media-breakpoint-down('md') {
   // tmp code
-  body { background: $white; }
+  body::after { content: 'md'; }
 
   html {
     font-size: 14px;
@@ -30,11 +66,12 @@
   @include restrict--md();
   @include goals--md();
   @include ways--md();
+  @include instruct--md();
 }
 
 @include media-breakpoint-down('sm') {
   // TODO: Удалить следующую строчку на продакшене
-  body { background: $light; }
+  body::after { content: 'sm'; }
 
   html {
     font-size: 13px;
@@ -49,11 +86,12 @@
   @include restrict--sm();
   @include goals--sm();
   @include ways--sm();
+  @include instruct--sm();
 }
 
 @include media-breakpoint-down('xs') {
   // TODO: Удалить следующую строчку на продакшене
-  body { background: $white; }
+  body::after { content: 'xs'; }
 
   html {
     font-size: 12px;
@@ -64,4 +102,5 @@
   @include restrict--xs();
   @include goals--xs();
   @include ways--xs();
+  @include instruct--xs();
 }

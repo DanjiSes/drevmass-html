@@ -12,68 +12,71 @@
 <section class="instruct">
   <div class="container">
     {# Title #}
-    <h2 class="h1 mb-5">Чтобы снять боль - просто ложитесь на массажер и прокатывайтесь спиной по роликам по 7 минут в день</h2>
+    <h2 class="h1 mb-5">
+      Чтобы снять боль - просто ложитесь на массажер и прокатывайтесь спиной по роликам по 7 минут в день
+    </h2>
 
     <div class="row">
       <div class="col-12 col-lg-7 pr-4">
-        {# Steps indicator #}
-        <div class="d-flex align-items-center justify-content-between mb-2">
-          <div style="width: 8.4%;">
-            <img class="img-fluid mr-2" src="static/images/content/is1.png" alt="">
-          </div>
-          <div style="width: 21.4%; margin-top: -1%;">
-            <img class="img-fluid" src="static/images/content/is_arrow.svg" alt="">
-          </div>
-          <div style="width: 8.4%;">
-            <img class="img-fluid mr-2" src="static/images/content/is2.png" alt="">
-          </div>
-          <div style="width: 21.4%; margin-top: -1%;">
-            <img class="img-fluid" src="static/images/content/is_arrow.svg" alt="">
-          </div>
-          <div style="width: 8.4%;">
-            <img class="img-fluid mr-2" src="static/images/content/is3.png" alt="">
-          </div>
-          <div style="width: 21.4%; margin-top: -1%;">
-            <img class="img-fluid" src="static/images/content/is_arrow.svg" alt="">
-          </div>
-        </div>
+
+        {% set videos = [
+          "Ложитесь",
+          "Двигаетесь вперед-назад",
+          "Ложитесь"
+        ] %}
+
         {# Steps Previevs #}
-        <div class="d-flex align-items-center justify-content-between mb-5">
-          <figure style="width: 31%;">
-            <img src="static/images/content/instruct1.png" alt="Ложитесь" class="w-100 img-fluid">
-            <figcaption class="font-weight-light mt-2">Ложитесь</figcaption>
-          </figure>
-          <figure style="width: 31%;">
-            <img src="static/images/content/instruct2.png" alt="Ложитесь" class="w-100 img-fluid">
-            <figcaption class="font-weight-light mt-2">Двигаетесь вперед-назад</figcaption>
-          </figure>
-          <figure style="width: 31%;">
-            <img src="static/images/content/instruct3.png" alt="Ложитесь" class="w-100 img-fluid">
-            <figcaption class="font-weight-light mt-2">Ложитесь</figcaption>
-          </figure>
+        <div class="row mb-4" id="js-stepsPreviews">
+          {% for v in videos %}
+            
+            <div class="col-12 col-sm-4 instruct__step">
+              {# Step #}
+              <div class="instruct__step-number mb-sm-2 ml-sm-n2 mr-2 mr-sm-0">
+                <img class="instruct__step-n img-fluid mr-sm-2 mb-2 mb-sm-0"
+                     src="static/images/content/is{{ loop.index }}.png" alt="">
+                <img class="instruct__step-a1 img-fluid d-none d-sm-inline"
+                     src="static/images/content/is_arrow.svg" alt="">
+                <img class="instruct__step-a2 img-fluid d-sm-none"
+                     src="static/images/arrow-down.svg" alt="">
+              </div>
+              {# Preview #}
+              <figure class="instruct__step-preview">
+                <img src="static/images/content/instruct{{ loop.index }}.png"
+                     alt="{{ v }}" class="w-100 img-fluid">
+                <figcaption class="font-weight-light mt-2">{{ v }}</figcaption>
+              </figure>
+            </div>
+
+          {% endfor %}
         </div>
         {# Instruction Video #}
         <div class="video cur-pointer mb-5" onclick="this.innerHTML = '{{ embedURL }}'">
           {# Сюда будет вставляться <iframe> #}
-          <div class="video__preview" style="background-image: url('static/images/content/instruct_vid_preview.png')"></div>
+          <div class="video__preview"
+               style="background-image: url('static/images/content/instruct_vid_preview.png')">
+          </div>
           <img class="video__play position-absolute img-fluid" src="static/images/play.svg" alt="">
         </div>
         {# Youtube Link #}
-        <a href="//youtube.com" class="instruct__youtube-link lead position-relative" target="_blank" style="max-width: 500px;">
-          <img src="static/images/youtube.png" class="img-fluid mr-3" alt="" style="max-width: 70px">
+        <a href="//youtube.com" class="instruct__youtube-link lead position-relative"
+           target="_blank" style="max-width: 500px;">
+          <img src="static/images/youtube.png" class="img-fluid mr-3" alt=""
+               style="max-width: 70px; width: 17%;">
           <u>Все возможные комплексы упражнений с Древмасс на youtube-канале</u>
           <span class="bgout-gray rounded-pill" style="right: 0"></span>
         </a>
       </div>
-      <div class="col-12 col-lg-5">
-        <h3 class="text-30 font-weight-light mt-2 mb-4">Лечебные эффекты Древмасс:</h3>
+      <div class="col-12 col-lg-5" id="js-healthEffects">
+        <h3 class="text-30 font-weight-light mt-2 mb-4 pt-4 pt-lg-0 pl-4 pl-lg-0">
+          Лечебные эффекты Древмасс:
+        </h3>
 
-        <div class="instruct__effects p-4">
+        <div class="instruct__effects p-4 mb-5 mb-lg-0">
           <ul class="list-unstyled font-weight-light">
             {% for f in effects %}
               
-              <li class="instruct__effect-item d-flex">
-                <b class="text-20 text-info mr-3" style="line-height: 1;">+</b>
+              <li class="instruct__effects-item d-flex">
+                <b class="text-info mr-3" style="line-height: 1; font-size: 25px;">+</b>
                 <span>{{ f }}</span>
               </li>
 
