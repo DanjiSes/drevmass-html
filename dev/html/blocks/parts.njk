@@ -5,28 +5,23 @@
 {% set parts = [
   {
     name: "Ролик с шипами",
-    descr: "Для более глубокого и интенсивного массажа",
-    arrows: ['pa1']
+    descr: "Для более глубокого и интенсивного массажа"
   },
   {
     name: "Рама",
-    descr: "Удерживающий элемент-основа",
-    arrows: ['pa2']
+    descr: "Удерживающий элемент-основа"
   },
   {
     name: "Асимметричный ролик",
-    descr: "Для исправления и профилактики сколиоза",
-    arrows: ['pa3']
+    descr: "Для исправления и профилактики сколиоза"
   },
   {
     name: "Вспомогательные ролики",
-    descr: "Необходимы для стабилизации и облегчения упражнений",
-    arrows: ['pa4']
+    descr: "Необходимы для стабилизации и облегчения упражнений"
   },
   {
     name: "Основной ролик",
-    descr: "Оказывает точечное воздействие на целевую область спины",
-    arrows: ['pa5']
+    descr: "Оказывает точечное воздействие на целевую область спины"
   }
 ] %}
 
@@ -34,22 +29,27 @@
 
   <div class="container position-relative">
     {# Title #}
-    <h2 class="h1 text-center">Массажер-тренажер Древмасс совмещает положительные стороны всех способов и позволяет добиться результата за 7 минут в день</h2>
+    <h2 class="h1 text-center mb-5 mb-lg-0">Массажер-тренажер Древмасс совмещает положительные стороны всех способов и позволяет добиться результата за 7 минут в день</h2>
     {# Preview #}
     <div class="parts__preview">
       <div class="parts__preview-circle"></div>
       <img src="static/images/content/parts_preview.png" alt="" class="w-100 img-fluid">
     </div>
     {# Parts #}
-    {% for p in parts %}
-      <dl class="part part_{{ loop.index }}">
-        <dt class="part__name">{{ p.name }}</dt>
-        <dd class="part__desc">{{ p.descr }}</dd>
-        {% for arrow in p.arrows %}
-            <img class="arrow" src="static/images/content/{{ arrow }}.svg" alt="">
-        {% endfor %}
-      </dl>
-    {% endfor %}
+    <div class="parts__wrapper">
+      {% for p in parts %}
+        <div class="part part_{{ loop.index }}">
+          <img src="static/images/content/part{{ loop.index }}.png" alt=""
+               class="part__img d-lg-none img-fluid mr-3"
+               style="left: 0; top: 0; object-fit: contain;"
+          >
+          <dl>
+            <dt class="part__name">{{ p.name }}</dt>
+            <dd class="part__desc">{{ p.descr }}</dd>
+          </dl>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 
 </section>
@@ -82,12 +82,18 @@
     {# Title #}
     <h2 class="h1 text-center mb-5">Что также входит в коробку?</h2>
     {# Box Items #}
-    <div class="row text-center">
+    <div class="row text-center flex-nowrap overflow-auto">
 
       {% for i in boxItems %}
         
-        <div class="col-12 col-lg-3">
-          <img class="w-75 img-fluid mb-3" src="static/images/content/{{ i.img }}.png" alt="{{ i.name }}">
+        <div class="col-5 col-md-3">
+          <div class="position-relative cube-75 mb-3">
+            <img class="w-75 img-fluid position-absolute w-100 h-100"
+                 src="static/images/content/{{ i.img }}.png" 
+                 alt="{{ i.name }}"
+                 style="left: 0; top: 0; object-fit: cover;"
+            >
+          </div>
           <h3 class="text-20">{{ i.name | safe }}</h3>
           <p class="font-weight-light mx-auto" style="max-width: 220px">{{ i.descr | safe  }}</p>
         </div>

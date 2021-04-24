@@ -94,3 +94,15 @@
 .text-underline {
   text-decoration: underline !important;
 }
+
+.cube::after {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.cube-75::after {
+  content: '';
+  display: block;
+  padding-top: 75%;
+}

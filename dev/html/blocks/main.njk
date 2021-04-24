@@ -4,7 +4,7 @@
 
  {% set watchPreview = "static/images/content/main_video-preview.png" %}
 
-<main class="main">
+<main class="main overflow-hidden">
 
   <div class="container position-relative">
     {# Title #}
@@ -13,6 +13,12 @@
     <blockquote class="mb-5 blockquote" style="opacity: 0.5;">
       <p class="mb-0">*Вернем деньги, если боль за 3 месяца не пройдет</p>
     </blockquote>
+    {# Main image #}
+    <div class="main-image">
+      <div class="main-image__circle main-image__circle_big"></div>
+      <div class="main-image__circle main-image__circle_small"></div>
+      <img src="static/images/content/main_img.png" alt="Массажер Древмасс" class="w-100 img-fluid">
+    </div>
     {# Features #}
     <ul class="features list-unstyled">
       <li class="features__item">Облегчение уже после первой тренировки</li>
@@ -32,12 +38,6 @@
       </div>
       <div class="watch__label">Посмотреть видео: <br>Как работает Древмасс?</div>
     </a>
-    {# Main image #}
-    <div class="main-image">
-      <div class="main-image__circle main-image__circle_big"></div>
-      <div class="main-image__circle main-image__circle_small"></div>
-      <img src="static/images/content/main_img.png" alt="Массажер Древмасс" class="w-100 img-fluid">
-    </div>
   </div>
 
 </main>

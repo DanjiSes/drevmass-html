@@ -1,4 +1,4 @@
-<section class="order">
+<section class="order overflow-hidden">
   <div class="container">
     <div class="row mb-5">
       <div class="col-12 col-lg-5">
@@ -15,7 +15,7 @@
 
     <div class="product rounded-lg shadow-lg mb-4">
       {# Title #}
-      <h3 class="h2 mb-1">Все включено <small class="font-weight-light text-16" style="opacity: 0.5;">(выгода до 25%)</small></h3>
+      <h3 class="h2 mb-1">Все включено <small class="font-weight-light text-16 text-nowrap" style="opacity: 0.5;">(выгода до 25%)</small></h3>
       {# Exists #}
       <div class="mb-3">
         <span class="align-middle font-weight-light">Товар в наличии:</span>
@@ -67,10 +67,10 @@
           <div class="row mx-n2">
             {% for i in ds %}
 
-              <div class="col-12 col-lg-4 px-2 mb-3">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-2 mb-3">
                 <div class="h-100 px-4 py-3 bg-light rounded">
                   {# Product name #}
-                  <h4 class="h6 text-dark" style="opacity: 0.6; max-width: 96px;">
+                  <h4 class="h6 text-dark" style="opacity: 0.6;">
                     {{ i.name }}
                   </h4>
                   {# Size #}
@@ -183,10 +183,10 @@
       }
     ] %}
 
-    <div class="row">
+    <div class="row mb-n4">
       {% for i in dops %}
         
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
           {# Card #}
           <div class="rounded shadow-lg overflow-hidden text-center">
             {# Img #}
@@ -219,7 +219,7 @@
                 Заказать со скидкой 25%
               </a>
               {# Deadline #}
-              <strong class="text-13" style="opacity: 0.4;">{{ i.deadline }}</strong>
+              <strong class="text-13 d-block" style="opacity: 0.4;">{{ i.deadline }}</strong>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 .order {
-  padding-top: 100px;
+  padding-top: rem(100px);
 
   .lead:first-of-type {
     font-size: rem(19px);
@@ -11,7 +11,7 @@
 }
 
 .product {
-  padding: 25px 30px;
+  padding: rem(25px 30px);
 }
 
 .list-checked {

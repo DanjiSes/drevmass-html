@@ -1,0 +1,126 @@
+// TODO: Удалить этот код на продакшене
+body::after {
+  position: fixed;
+  content: 'xl';
+  display: block;
+  background: $info;
+  color: $secondary;
+  left: 5px;
+  bottom: 5px;
+  font-weight: 700;
+  padding: 3px 5px;
+  font-size: 20px;
+  text-transform: uppercase;
+  opacity: .5;
+  border-radius: 4px;
+  z-index: 9999999;
+}
+
+body::before {
+  position: fixed;
+  content: '❮❮ При публикации этой надписи не будет';
+  display: block;
+  background: $white;
+  color: $secondary;
+  left: 45px;
+  bottom: 5px;
+  font-weight: 700;
+  padding: 3px 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+  opacity: .7;
+  border-radius: 4px;
+  z-index: 9999999;
+}
+
+body::before, body::after {
+  // display: none;
+}
+
+@include media-breakpoint-down('lg') {
+  // TODO: Удалить следующую строчку на продакшене
+  body::after { content: 'lg'; }
+
+  html {
+    font-size: 15px;
+  }
+
+  h1, .h1 {
+    font-size: 2.7rem;
+  }
+
+  // Includes
+  @include main--lg();
+  @include restrict--lg();
+  @include goals--lg();
+  @include ways--lg();
+  @include parts--lg();
+  @include instruct--lg();
+  @include serts--lg();
+  @include haranty--lg();
+  @include gallery--lg();
+}
+
+@include media-breakpoint-down('md') {
+  // tmp code
+  body::after { content: 'md'; }
+
+  html {
+    font-size: 14px;
+  }
+
+  // Includes
+  @include main--md();
+  @include restrict--md();
+  @include goals--md();
+  @include ways--md();
+  @include parts--md();
+  @include instruct--md();
+  @include serts--md();
+  @include haranty--md();
+  @include gallery--md();
+}
+
+@include media-breakpoint-down('sm') {
+  // TODO: Удалить следующую строчку на продакшене
+  body::after { content: 'sm'; }
+
+  html {
+    font-size: 13px;
+  }
+
+  h1, .h1 {
+    font-size: 2.4rem;
+  }
+
+  // Includes
+  @include main--sm();
+  @include restrict--sm();
+  @include goals--sm();
+  @include ways--sm();
+  @include parts--sm();
+  @include instruct--sm();
+  @include serts--sm();
+  @include haranty--sm();
+  @include gallery--sm();
+}
+
+@include media-breakpoint-down('xs') {
+  // TODO: Удалить следующую строчку на продакшене
+  body::after { content: 'xs'; }
+
+  html {
+    font-size: 12px;
+  }
+
+  // Includes
+  @include main--xs();
+  @include restrict--xs();
+  @include goals--xs();
+  @include ways--xs();
+  @include parts--xs();
+  @include instruct--xs();
+  @include serts--xs();
+  @include haranty--xs();
+  @include gallery--xs();
+}

@@ -1,9 +1,9 @@
-<section class="reviews">
+<section class="reviews overflow-hidden">
   <div class="container mb-4">
     <div class="row align-items-center">
       <div class="col-12 col-lg-5">
         {# Title #}
-        <h2 class="h1 m-0">Отзывы о Древмасс</h2>
+        <h2 class="h1 mb-3 mb-lg-0">Отзывы о Древмасс</h2>
       </div>
       <div class="col-12 col-lg-7">
         <div class="d-flex align-items-center position-relative px-4 py-3">
@@ -29,7 +29,9 @@
       {% for i in range(20) %}
         <div class="px-1">
           <a href="static/images/content/r{{ [1,2] | random }}_b.png" class="js-review-img">
-            <img src="static/images/content/r{{ [1,2] | random }}.png" alt="Отзыв" class="w-100 img-fluid">
+            <img data-lazy="static/images/content/r{{ [1,2] | random }}.png"
+                 src="static/images/content/review-preview.png"
+                 alt="Отзыв" class="w-100 img-fluid">
           </a>
         </div>
       {% endfor %}
