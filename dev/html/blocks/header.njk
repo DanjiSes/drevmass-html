@@ -1,10 +1,13 @@
 {%set menu = [
-  {"t": "Как снять боль?", "l": "#"},
-  {"t": "Комплектация", "l": "#"},
-  {"t": "Отзывы", "l": "#"},
-  {"t": "Гарантия", "l": "#"},
-  {"t": "Контакты", "l": "#"}
+  {"t": "Комплектация", "l": "#kmplektaciya"},
+  {"t": "Отзывы", "l": "#otzivy"},
+  {"t": "Гарантия", "l": "#garantiya"}
 ]%}
+
+{# 
+  {"t": "Как снять боль?", "l": "#"}
+  {"t": "Контакты", "l": "#"}
+#}
 
 {%set phone = { "t": "+7 999 999 99 99", "l": "+79999999999" } %}
 
@@ -20,7 +23,7 @@
     <nav class="nav d-none d-lg-block">
       <ul class="list-unstyled">
         {% for l in menu %}
-          <li><a href="{{ l.l }}">{{ l.t }}</a></li>
+          <li><a class="js-scrollTo" href="{{ l.l }}">{{ l.t }}</a></li>
         {% endfor %}
       </ul>
     </nav>
@@ -71,7 +74,7 @@
     <nav class="nav mb-4">
       <ul class="list-unstyled flex-column">
         {% for l in menu %}
-          <li><a href="{{ l.l }}">{{ l.t }}</a></li>
+          <li><a class="js-scrollTo" href="{{ l.l }}">{{ l.t }}</a></li>
         {% endfor %}
       </ul>
     </nav>

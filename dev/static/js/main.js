@@ -81,4 +81,12 @@ $(function() {
     arrows: false,
     dots: false,
   });
+
+  // Smooth scroll
+
+  $(".js-scrollTo").click(function (){
+    $('html, body').animate({
+        scrollTop: $($(this).attr('href')).offset().top
+    }, 1500);
+});
 });
