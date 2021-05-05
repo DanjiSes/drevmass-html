@@ -11,9 +11,16 @@
 .header {
   min-height: 100px;
 
-  .logo img {
-    max-width: 140px;
-    height: auto;
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: rem(14px);
+    
+    img {
+      max-width: rem(140px);
+      height: auto;
+      margin-right: rem(15px);
+    }
   }
 
   .phone {

@@ -113,6 +113,12 @@ body::before, body::after {
     font-size: 12px;
   }
 
+  .logo {    
+    img {
+      max-width: rem(100px) !important;
+    }
+  }
+
   // Includes
   @include main--xs();
   @include restrict--xs();
