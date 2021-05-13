@@ -1,4 +1,4 @@
-{% set embedURL = '<iframe width="560" height="315" src="https://www.youtube.com/embed/a5aW5u_FgVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' %}
+{% set embedURL = '<iframe width="560" height="315" src="https://www.youtube.com/embed/uR58PtUYSEc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' %}
 
 {% set effects = [
   "Возобновление движения и восстановление здорового, интенсивного тканевого обмена веществ",
@@ -20,9 +20,9 @@
       <div class="col-12 col-lg-7 pr-4">
 
         {% set videos = [
-          "Ложитесь",
-          "Двигаетесь вперед-назад",
-          "Ложитесь"
+          "Ложитесь на массажер и делаете движения вперед назад",
+          "Переставляете активный ролик и работаете со всеми отделами позвоночника",
+          "Меняете углы наклона тела и усиливаете глубину воздействие на мышцы"
         ] %}
 
         {# Steps Previevs #}
@@ -40,11 +40,14 @@
                      src="static/images/arrow-down.svg" alt="">
               </div>
               {# Preview #}
-              <figure class="instruct__step-preview">
-                <img src="static/images/content/instruct{{ loop.index }}.png"
-                     alt="{{ v }}" class="w-100 img-fluid">
-                <figcaption class="font-weight-light mt-2">{{ v }}</figcaption>
-              </figure>
+              <div class="instruct__step-preview">
+                <video class="w-100 img-fluid rounded" autoplay loop muted inline playsinline>
+                  <source src="static/images/content/instr{{ loop.index }}.mp4" type="video/mp4">
+                </video>
+                <p class="font-weight-light m-0 mt-2">
+                  <small>{{ v }}</small>
+                </p>
+              </div>
             </div>
 
           {% endfor %}
@@ -57,14 +60,26 @@
           </div>
           <img class="video__play position-absolute img-fluid" src="static/images/play.svg" alt="">
         </div>
-        {# Youtube Link #}
-        <a href="//youtube.com" class="instruct__youtube-link lead position-relative"
-           target="_blank" style="max-width: 500px;">
-          <img src="static/images/youtube.png" class="img-fluid mr-3" alt=""
-               style="max-width: 70px; width: 17%;">
-          <u>Все возможные комплексы упражнений с Древмасс на youtube-канале</u>
-          <span class="bgout-gray rounded-pill" style="right: 0"></span>
-        </a>
+        {# Youtube #}
+        <div class="d-flex align-items-center">
+          <a href="https://www.youtube.com/playlist?list=PLjdFQU_oUl1vwcZjDel6IwQirD3Aox4kP"
+            class="instruct__youtube-link lead position-relative"
+            target="_blank" style="max-width: 500px;"
+          >
+            {# <img src="static/images/youtube.png" class="img-fluid mr-3" alt=""
+                style="max-width: 70px; width: 17%;"> #}
+            <u>Изучите нашу авторскую методику по занятиям на Древмасс</u>
+            <span class="bgout-gray rounded-pill" style="right: 0; background: #FFB800;"></span>
+          </a>
+          <a href="https://www.youtube.com/c/Drevmass"
+            class="text-center text-secondary text-nowrap px-3"
+            target="_blank" style="max-width: 500px;"
+          >
+            <img src="static/images/youtube.png" class="img-fluid mr-3" alt=""
+                style="max-width: 70px; width: 100%;">
+            <u class="d-block">наш youtube-канал</u>
+          </a>
+        </div>
       </div>
       <div class="col-12 col-lg-5" id="js-healthEffects">
         <h3 class="text-30 font-weight-light mt-2 mb-4 pt-4 pt-lg-0 pl-4 pl-lg-0">
