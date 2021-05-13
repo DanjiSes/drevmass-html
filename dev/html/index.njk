@@ -42,4 +42,22 @@
   });
 </script>
 
+<script>
+  $('#mainVideoModal')
+		.on('show.bs.modal', function(e) {
+			var $this = $(this);
+			var videoUrl = $this.data('video')
+			var iframe = $this.find('.embed-responsive').html().trim()
+
+			$this.find('.embed-responsive').html(`<iframe class="embed-responsive-item" src="${videoUrl}" allowfullscreen></iframe>`)
+		})
+		.on('hidden.bs.modal', function(e) {
+			var $this = $(this);
+			var videoUrl = $this.data('video')
+			var iframe = $this.find('.embed-responsive').html().trim()
+
+			$this.find('.embed-responsive').empty()
+		})
+</script>
+
 {% endblock %}
