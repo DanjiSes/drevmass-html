@@ -106,3 +106,9 @@
   display: block;
   padding-top: 75%;
 }
+
+.cube-50::after {
+  content: '';
+  display: block;
+  padding-top: 50%;
+}

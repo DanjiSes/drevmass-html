@@ -48,19 +48,22 @@
               name: "Комплект с 5-роликовым тренажером",
               size: "рост до 185",
               oldPrice: "12 490 ₽",
-              newPrice: "11 990 ₽"
+              newPrice: "11 990 ₽",
+              modal: "#orderModelComplect5Modal"
             },
             {
               name: "Комплект с 6-роликовым тренажером",
               size: "рост 186-205",
               oldPrice: "13 490 ₽",
-              newPrice: "12 990 ₽"
+              newPrice: "12 990 ₽",
+              modal: "#orderModelComplect6Modal"
             },
             {
               name: "Комплект с 7-роликовым тренажером",
               size: "рост от 206",
               oldPrice: "14 490 ₽",
-              newPrice: "13 990 ₽"
+              newPrice: "13 990 ₽",
+              modal: "#orderModelComplect7Modal"
             }
           ] %}
 
@@ -87,7 +90,7 @@
                     <span class="text-info text-nowrap">{{ i.newPrice }}</span>
                   </div>
                   {# Order button #}
-                  <a href="#" class="btn text-white bg-info rounded-pill px-3 mt-3 w-100">
+                  <a href="{{ i.modal }}" data-toggle="modal" class="btn text-white bg-info rounded-pill px-3 mt-3 w-100">
                     Заказать
                   </a>
                 </div>
@@ -155,7 +158,8 @@
         ],
         oldPrice: "13 320 ₽",
         newPrice: "9 990 ₽",
-        deadline: "действует до 26.04.2021"
+        deadline: "действует до 26.04.2021",
+        modal: "#orderModel5Modal"
       },
       {
         name: "6-роликовый массажер",
@@ -167,7 +171,8 @@
         ],
         oldPrice: "14 600 ₽",
         newPrice: "10 990 ₽",
-        deadline: "действует до 26.04.2021"
+        deadline: "действует до 26.04.2021",
+        modal: "#orderModel6Modal"
       },
       {
         name: "7-роликовый массажер",
@@ -179,7 +184,8 @@
         ],
         oldPrice: "13 320 ₽",
         newPrice: "9 990 ₽",
-        deadline: "действует до 26.04.2021"
+        deadline: "действует до 26.04.2021",
+        modal: "#orderModel7Modal"
       }
     ] %}
 
@@ -215,7 +221,7 @@
                 <span class="text-info text-nowrap">{{ i.newPrice }}</span>
               </div>
               {# Order btn #}
-              <a href="#" class="btn text-white bg-info rounded-pill px-5 mt-3 mb-2">
+              <a href="{{ i.modal }}" data-toggle="modal" class="btn text-white bg-info rounded-pill px-5 mt-3 mb-2">
                 Заказать со скидкой 25%
               </a>
               {# Deadline #}
