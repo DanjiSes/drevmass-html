@@ -77,6 +77,7 @@ function jsLibs(cb) {
     'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'node_modules/slick-carousel/slick/slick.min.js',
     'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+    'node_modules/inputmask/dist/jquery.inputmask.min.js',
   ];
 
   if (!libs.length) return cb();

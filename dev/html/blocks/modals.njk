@@ -8,10 +8,34 @@
       <button type="button" class="close w-100 bg-transparent border-0 text-white text-right py-3" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">Закрыть</span>
       </button>
-      <div class="modal-body p-0 overflow-hidden rounded-lg">
+      <div class="modal-body p-0 overflow-hidden">
         <div class="embed-responsive embed-responsive-16by9">
           {# <iframe class="embed-responsive-item" src="{{ video }}" allowfullscreen></iframe> #}
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="callBackModal" tabindex="-1" aria-labelledby="callBackModalLabel" aria-hidden="true" data-video="{{ video }}">
+  <div class="modal-dialog modal-dialog-centered flex-wrap">
+    <div class="modal-content border-0 bg-transparent">
+      <button type="button" class="close w-100 bg-transparent border-0 text-white text-right py-3" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">Закрыть</span>
+      </button>
+      <div class="modal-body overflow-hidden bg-white text-center px-4 pb-5 pt-4">
+        <h3 class="h2">Заказать звонок</h3>
+        
+        <p class="lead mb-5">Оставьте свои контактные данные, и мы свяжемся с вами в течение 5 минут для уточнения деталей заказа</p>
+
+        <form action="">
+          <input type="text" placeholder="Ваше имя" class="form-control rounded-pill text-center mb-3 lead">
+          <input type="tel" placeholder="Ваш номер телефона" class="form-control rounded-pill text-center mb-3 lead" data-inputmask="'mask': '99999999999[9]'">
+          <button type="submit" class="btn w-100 text-white bg-info rounded-pill px-5">
+            <img src="static/images/finger-white.svg" alt="" class="mr-3">
+            <span>Отправить заявку!</span>
+          </button>
+        </form>
       </div>
     </div>
   </div>
