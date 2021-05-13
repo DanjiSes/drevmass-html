@@ -1,0 +1,22 @@
+{# Modals #}
+
+{% set video1 = "https://www.youtube.com/embed/in3rekq4SxI" %}
+
+<div class="modal fade" id="mainVideoModal" tabindex="-1" aria-labelledby="mainVideoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered flex-wrap">
+    <div class="modal-content border-0 bg-transparent">
+      <button type="button" class="close w-100 bg-transparent border-0 text-white text-right py-3" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">Закрыть</span>
+      </button>
+      <div class="modal-body p-0 overflow-hidden rounded-lg">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="{{ video1 }}" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#').on('show.bs.modal')
+</script>

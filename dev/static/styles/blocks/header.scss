@@ -24,16 +24,20 @@
   }
 
   .phone {
-    font-size: rem(25px);
-    text-decoration: none;
-
     position: relative;
     z-index: 10;
+
+    a {
+      font-size: rem(25px);
+      text-decoration: none;
+    }
   }
 }
 
 .nav {
   white-space: nowrap;
+  padding-left: rem(20px);
+  padding-right: rem(20px);
 
   ul {
     display: flex;

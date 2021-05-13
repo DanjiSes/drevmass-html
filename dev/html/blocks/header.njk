@@ -9,7 +9,7 @@
   {"t": "Контакты", "l": "#"}
 #}
 
-{%set phone = { "t": "+8 800 700 37 79", "l": "88007003779" } %}
+{%set phone = { "t": "8 800 700 37 79", "l": "88007003779" } %}
 
 <header class="header">
   <div class="container-fluid py-2 d-flex align-items-center justify-content-between">
@@ -34,12 +34,19 @@
     </nav>
 
     <div class="px-3 d-flex align-items-center">
-      {# Phone #}
-      <a href="tel:{{ phone.l }}"
-        class="phone text-dark font-weight-bold d-none d-lg-block"
-        data-t="{{ phone.t }}">
-        {{ phone.t }}
+      {# Cta btn #}
+      <a href="tel:{{ phone.l }}" class="d-none d-lg-block btn text-white bg-info rounded-pill py-2 px-3 mr-4 text-nowrap">
+        Подберем вам массажер
       </a>
+      {# Phone #}
+      <div class="phone d-none d-lg-block text-nowrap">
+        <a href="tel:{{ phone.l }}"
+          class="text-dark font-weight-bold"
+          data-t="{{ phone.t }}">
+          {{ phone.t }}
+        </a>
+        <small class="d-block">Работаем с 09:00 до 21:00 по МСК</small>
+      </div>
 
       <a href="#menu" class="d-lg-none">
         <svg width="33" height="21" viewBox="0 0 33 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,12 +92,19 @@
     </nav>
   </div>
 
-  {# Phone #}
-  <a href="tel:{{ phone.l }}"
-    class="phone text-dark font-weight-bold"
-    data-t="{{ phone.t }}">
-    {{ phone.t }}
-  </a>
+  <div>
+    {# Phone #}
+    <a href="tel:{{ phone.l }}"
+      class="phone text-dark font-weight-bold"
+      data-t="{{ phone.t }}">
+      {{ phone.t }}
+    </a>
+    <small class="d-block">Работаем с 09:00 до 21:00 по МСК</small>
+    {# Cta btn #}
+    <a href="tel:{{ phone.l }}" class="d-block w-100 btn text-white bg-info rounded-pill py-2 px-3 mt-4 text-nowrap">
+      Подберем вам массажер
+    </a>
+  </div>
 </div>
 
 <a href="#" class="mobile-nav-overlay"></a>
