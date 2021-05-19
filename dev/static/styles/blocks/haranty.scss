@@ -7,11 +7,35 @@
   }
 
   &__sub {
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
   }
 
   &__text {
     font-weight: 300;
     line-height: 1.4;
+  }
+}
+
+@mixin haranty--lg() {
+  
+}
+
+@mixin haranty--md() {
+  
+}
+
+@mixin haranty--sm() {
+  
+}
+
+@mixin haranty--xs() {
+  .haranty {
+
+    &__contacts {
+
+      img {
+        width: 20px;
+      }
+    }
   }
 }

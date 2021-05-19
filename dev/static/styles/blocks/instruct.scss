@@ -47,6 +47,28 @@
 }
 
 .instruct {
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    &-number {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-n {
+      width: 27%;
+    }
+
+    &-a1 {
+      width: 70%;
+    }
+  }
+  
   &__youtube-link {
     display: flex;
     align-items: center;
@@ -69,10 +91,62 @@
       background: $light;
       border-radius: $border-radius-lg;
     }
+
+    &-item {
+      margin-bottom: 45px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
-  &__effect-item {
-    margin-bottom: 45px;
-  }
+}
 
+@mixin instruct--lg() {
+  
+}
+
+@mixin instruct--md() {
+  .instruct {
+  
+    &__effects-item {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@mixin instruct--sm() {
+  .instruct {
+  
+    &__effects {
+      position: static;
+    }
+  }
+}
+
+@mixin instruct--xs() {
+  .instruct {
+
+    &__step {
+      flex-direction: row;
+      align-items: start;
+      justify-content: start;
+      margin-bottom: 10px;
+
+      &-number {
+        flex-direction: column;
+        
+      }
+
+      &-n {
+        width: 50px;
+      }
+
+      &-preview {
+        width: 100%;
+        max-width: 220px;
+      }
+    }
+  }
 }

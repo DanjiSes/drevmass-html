@@ -1,6 +1,9 @@
 {% extends "templates/main.njk" %}
 
-{% set title = 'Main Page' %}
+{% set title = 'Избавьтесь от боли в спине за 3 месяца за 7 минут самомассажа в день на массажере Древмасс' %}
+
+{% set description = '*Вернем деньги, если боль за 3 месяца не пройдет. Облегчение уже после первой тренировки. Расслабление спины и возобновление питания хрящей и межпозвоночных дисков. Годовая гарантия на устройство, срок службы - 15 лет. Прошли официальную сертификацию Минздрава. Более 30000 счастливых людей, вернувшихся к полноценной жизни с 2012 года. Менее 1% возвратов.' %}
+
 {% set bodyClass = 'main-page' %}
 
 {% block content %}
@@ -15,7 +18,46 @@
 	{% include "blocks/haranty.njk" %}
 	{% include "blocks/gallery.njk" %}
 	{% include "blocks/order.njk" %}
+	{% include "blocks/dops.njk" %}
+	{% include "blocks/modals.njk" %}
 {% endblock %}
 
 {% block scripts %}
+	
+<script>
+  $(function() {
+		// MD
+		if (window.innerWidth <= 992) {
+			// Престановки в блоке с лечебными эффектами
+			$('#js-healthEffects')
+				.attr('class', 'position-relative')
+				.insertAfter('#js-stepsPreviews');
+
+			// Перемещения в блоке гарантии
+			$('.haranty__title').prependTo('.haranty > .container');
+			$('.haranty__sub').clone().insertAfter('.haranty__title');
+		}
+
+		
+  });
+</script>
+
+<script>
+  $('#mainVideoModal')
+		.on('show.bs.modal', function(e) {
+			var $this = $(this);
+			var videoUrl = $this.data('video')
+			var iframe = $this.find('.embed-responsive').html().trim()
+
+			$this.find('.embed-responsive').html(`<iframe class="embed-responsive-item" src="${videoUrl}" allowfullscreen></iframe>`)
+		})
+		.on('hidden.bs.modal', function(e) {
+			var $this = $(this);
+			var videoUrl = $this.data('video')
+			var iframe = $this.find('.embed-responsive').html().trim()
+
+			$this.find('.embed-responsive').empty()
+		})
+</script>
+
 {% endblock %}

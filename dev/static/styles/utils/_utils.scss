@@ -1,13 +1,5 @@
 @import "grid.scss";
 
-.opacity-5 {
-  opacity: .5;
-}
-
-.opacity-7 {
-  opacity: .7;
-}
-
 .text-gray {
   color: $gray;
 }
@@ -101,4 +93,22 @@
 
 .text-underline {
   text-decoration: underline !important;
+}
+
+.cube::after {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.cube-75::after {
+  content: '';
+  display: block;
+  padding-top: 75%;
+}
+
+.cube-50::after {
+  content: '';
+  display: block;
+  padding-top: 50%;
 }

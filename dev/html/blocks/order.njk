@@ -1,4 +1,4 @@
-<section class="order">
+<section id="catalog" class="order overflow-hidden">
   <div class="container">
     <div class="row mb-5">
       <div class="col-12 col-lg-5">
@@ -8,14 +8,14 @@
       <div class="col-12 col-lg-7">
         {# Sub #}
         <p class="lead mt-2">
-          Вы оплачиваете товар только при получении после осмотра. <br> Если вы не избавитесь от боли в спине за 3 месяца - мы вернем деньги! <br> Гарантии - 1 год на устройство, 5 лет - на раму. 15 лет - срок службы
+          Вы оплачиваете товар только при получении после осмотра. <br> Если Вы не избавитесь от боли в спине за 3 месяца - мы вернем деньги! <br> Гарантии - 1 год на устройство, 5 лет - на раму. 15 лет - срок службы
         </p>
       </div>
     </div>
 
-    <div class="product rounded-lg shadow-lg">
+    <div class="product rounded-lg shadow-lg mb-4">
       {# Title #}
-      <h3 class="h2 mb-1">Все включено <small class="opacity-5 font-weight-light text-16">(выгода до 25%)</small></h3>
+      <h3 class="h2 mb-1">Все включено <small class="font-weight-light text-16 text-nowrap" style="opacity: 0.5;">(выгода до 25%)</small></h3>
       {# Exists #}
       <div class="mb-3">
         <span class="align-middle font-weight-light">Товар в наличии:</span>
@@ -31,41 +31,69 @@
       <div class="row">
         <div class="col-12 col-lg-7">
           {# Components #}
-          <div class="position-relative pr-5 py-3 d-inline-block mb-3">
+          <div class="position-relative pr-5 py-3 d-iline-block d-sm-inline-flex mb-3">
             <div class="bgout-gray rounded-lg" style="right: 0; opacity: 0.2;"></div>
-            <ul class="list-unstyled font-weight-light list-checked mb-0">
-              <li>5,6,7 роликовый Древмасс</li>
+            <ul class="list-unstyled font-weight-light list-checked mb-0 mr-4">
+              <li>5,6,7 роликовый <br> Древмасс</li>
               <li>Ролик с шипами</li>
-              <li>Диск с методикой занятий</li>
+            </ul>
+            <ul class="list-unstyled font-weight-light list-checked mb-0">
+              <li style="max-width: 210px;">Cопровождение на 21 день по занятиям на Древмасс</li>
+              <li>Подарки от производителя</li>
             </ul>
           </div>
           {# Description #}
           <p class="font-weight-light" style="max-width: 467px;">Набор включает в себя ролик с шипами Древмасс. Занятия в данной комплектации считаются более эффективными и усиленными за счет аккупунктурного воздействия ролика с шипами и более глубокой проработки гладким активным роликом.</p>
           {# Cards #}
-          <div class="row mx-n2">
-            {% for i in range(3) %}
 
-              <div class="col-12 col-lg-4 px-2 mb-3">
+          {% set ds = [
+            {
+              name: "Комплект с 5-роликовым тренажером",
+              size: "рост до 185",
+              oldPrice: "12 490 ₽",
+              newPrice: "11 990 ₽",
+              modal: "#orderModelComplect5Modal"
+            },
+            {
+              name: "Комплект с 6-роликовым тренажером",
+              size: "рост 186-205",
+              oldPrice: "13 490 ₽",
+              newPrice: "12 990 ₽",
+              modal: "#orderModelComplect6Modal"
+            },
+            {
+              name: "Комплект с 7-роликовым тренажером",
+              size: "рост от 206",
+              oldPrice: "14 490 ₽",
+              newPrice: "13 990 ₽",
+              modal: "#orderModelComplect7Modal"
+            }
+          ] %}
+
+          <div class="row mx-n2">
+            {% for i in ds %}
+
+              <div class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 px-2 mb-3">
                 <div class="h-100 px-4 py-3 bg-light rounded">
                   {# Product name #}
-                  <h4 class="h6 text-dark" style="opacity: 0.6; max-width: 98px;">
-                    Комплект с {{ loop.index + 4 }}-роликовым тренажером
+                  <h4 class="h6 text-dark" style="opacity: 0.6;">
+                    {{ i.name }}
                   </h4>
                   {# Size #}
                   <div class="bg-white px-2 py-1 text-13 font-weight-light d-inline-flex align-items-center rounded-pill">
                     <img src="static/images/ruler.svg" alt="линейка" class="img-fluid mr-1" style="width: 9px">
-                    <span>рост до 185</span>
+                    <span>{{ i.size }}</span>
                   </div>
                   {# Price #}
                   <div class="lead font-weight-bold mt-3">
                     <span class="text-dark text-dash mr-2 text-nowrap"
                           style="opacity: 0.2; font-size: 15px; vertical-align: top;">
-                      12 490 ₽
+                      {{ i.oldPrice }}
                     </span>
-                    <span class="text-info text-nowrap">11 990 ₽</span>
+                    <span class="text-info text-nowrap">{{ i.newPrice }}</span>
                   </div>
                   {# Order button #}
-                  <a href="#-" class="btn text-white bg-info rounded-pill px-3 mt-3 w-100">
+                  <a href="{{ i.modal }}" data-toggle="modal" class="btn text-white bg-info rounded-pill px-3 mt-3 w-100">
                     Заказать
                   </a>
                 </div>
@@ -75,38 +103,28 @@
           </div>
         </div>
         <div class="col-12 col-lg-5">
-          {# Bit preview slider #}
+        
+          {# Big preview slider #}
           <div class="js-bigPreviewSlider">
-            {% for i in range(5) %}
+            {% for i in range(6) %}
 
-              {% set url = "static/images/content/op" + loop.index + "-big.png" %}
-              {% set smUrl = "static/images/content/op" + loop.index + ".png" %}
-
-              <div>
-                <div style="padding-top: 100%;" class="position-relative d-block">
-                  <img data-lazy="{{ url }}" src="{{ smUrl }}" alt="Фотография тренажера Древмасс в увеличеном размере" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
-                </div>
-              </div>
+              {% set url = "static/images/content/product/op" + loop.index + ".png" %}
+              {% set smUrl = "static/images/content/product/op" + loop.index + "-sm.png" %}
 
               <div>
-                <div style="padding-top: 100%;" class="position-relative d-block">
+                <div style="padding-top: 75%;" class="position-relative d-block border mx-2">
                   <img data-lazy="{{ url }}" src="{{ smUrl }}" alt="Фотография тренажера Древмасс в увеличеном размере" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
                 </div>
               </div>
 
             {% endfor %}
           </div>
+
           {# Small previews #}
           <div class="mt-3 js-previewsSlider">
-            {% for i in range(5) %}
+            {% for i in range(6) %}
 
-              {% set url = "static/images/content/op" + loop.index + ".png" %}
-              
-              <div class="mx-2 cur-pointer border">
-                <div style="padding-top: 100%;" class="bg-light position-relative">
-                  <img src="{{ url }}" alt="Миниатюра фотографии тренажера Древмасс" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
-                </div>
-              </div>
+              {% set url = "static/images/content/product/op" + loop.index + "-sm.png" %}
               
               <div class="mx-2 cur-pointer border">
                 <div style="padding-top: 100%;" class="bg-light position-relative">
@@ -118,6 +136,95 @@
           </div>
         </div>
       </div>
+    </div>
+
+    {% set dops = [
+      {
+        name: "5-роликовый массажер",
+        size: "рост до 185",
+        dops: [
+          "+ Авторский комплекс упражнений",
+          "+ Подарки от производителя",
+          "+ Фиксатор для вертикального хранения",
+          "+ Cопровождение на 21 день по занятиям на Древмасс"
+        ],
+        oldPrice: "13 320 ₽",
+        newPrice: "9 990 ₽",
+        deadline: "действует до 26.04.2021",
+        modal: "#orderModel5Modal"
+      },
+      {
+        name: "6-роликовый массажер",
+        size: "рост 186-205",
+        dops: [
+          "+ Авторский комплекс упражнений",
+          "+ Подарки от производителя",
+          "+ Фиксатор для вертикального хранения",
+          "+ Cопровождение на 21 день по занятиям на Древмасс"
+        ],
+        oldPrice: "14 600 ₽",
+        newPrice: "10 990 ₽",
+        deadline: "действует до 26.04.2021",
+        modal: "#orderModel6Modal"
+      },
+      {
+        name: "7-роликовый массажер",
+        size: "рост от 206",
+        dops: [
+          "+ Авторский комплекс упражнений",
+          "+ Подарки от производителя",
+          "+ Фиксатор для вертикального хранения",
+          "+ Cопровождение на 21 день по занятиям на Древмасс"
+        ],
+        oldPrice: "13 320 ₽",
+        newPrice: "9 990 ₽",
+        deadline: "действует до 26.04.2021",
+        modal: "#orderModel7Modal"
+      }
+    ] %}
+
+    <div class="row mb-n4">
+      {% for i in dops %}
+        
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          {# Card #}
+          <div class="rounded shadow-lg overflow-hidden text-center">
+            {# Img #}
+            <div style="padding-top: 65%;" class="position-relative">
+              <img src="static/images/content/p{{ loop.index }}.png" alt="{{ i.name }}" class="position-absolute w-100 h-100" style="left: 0; top: 0; object-fit: cover;">
+            </div>
+            <div class="p-3">
+              {# Product name #}
+              <h3 class="h4">{{ i.name }}</h3>
+              {# Size #}
+              <div class="bg-white px-2 py-1 text-13 font-weight-light d-inline-flex align-items-center rounded-pill mb-2">
+                <img src="static/images/ruler.svg" alt="линейка" class="img-fluid mr-1" style="width: 9px">
+                <span>{{ i.size }}</span>
+              </div>
+              {# Gifgs #}
+              <ul class="list-unstyled text-13 mb-3" style="opacity: 0.7;">
+                {% for d in i.dops %}
+                  <li>{{ d }}</li>
+                {% endfor %}
+              </ul>
+              {# Price #}
+              <div class="h3 font-weight-bold">
+                <span class="text-dark text-dash mr-2 text-nowrap" style="opacity: 0.2;">
+                  {{ i.oldPrice}}
+                </span>
+                <span class="text-info text-nowrap">{{ i.newPrice }}</span>
+              </div>
+              {# Order btn #}
+              <a href="{{ i.modal }}" data-toggle="modal" class="btn text-white bg-info rounded-pill px-5 mt-3 mb-2">
+                Заказать со скидкой 25%
+              </a>
+              {# Deadline #}
+              <strong class="text-13 d-block" style="opacity: 0.4;">{{ i.deadline }}</strong>
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
     </div>
   </div>
 </section>

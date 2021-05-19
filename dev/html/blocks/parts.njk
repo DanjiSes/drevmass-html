@@ -5,51 +5,51 @@
 {% set parts = [
   {
     name: "Ролик с шипами",
-    descr: "Для более глубокого и интенсивного массажа",
-    arrows: ['pa1']
+    descr: "Для более глубокого и интенсивного массажа"
   },
   {
     name: "Рама",
-    descr: "Удерживающий элемент-основа",
-    arrows: ['pa2']
+    descr: "Удерживающий элемент-основа"
   },
   {
     name: "Асимметричный ролик",
-    descr: "Для исправления и профилактики сколиоза",
-    arrows: ['pa3']
+    descr: "Для исправления и профилактики сколиоза"
   },
   {
     name: "Вспомогательные ролики",
-    descr: "Необходимы для стабилизации и облегчения упражнений",
-    arrows: ['pa4']
+    descr: "Необходимы для стабилизации и облегчения упражнений"
   },
   {
     name: "Основной ролик",
-    descr: "Оказывает точечное воздействие на целевую область спины",
-    arrows: ['pa5']
+    descr: "Оказывает точечное воздействие на целевую область спины"
   }
 ] %}
 
-<section class="parts">
+<section class="parts" id="kmplektaciya">
 
   <div class="container position-relative">
     {# Title #}
-    <h2 class="h1 text-center">Массажер-тренажер Древмасс совмещает положительные стороны всех способов и позволяет добиться результата за 7 минут в день</h2>
+    <h2 class="h1 text-center mb-5 mb-lg-0">Массажер-тренажер Древмасс совмещает положительные стороны всех способов и позволяет добиться результата за 7 минут в день</h2>
     {# Preview #}
     <div class="parts__preview">
       <div class="parts__preview-circle"></div>
       <img src="static/images/content/parts_preview.png" alt="" class="w-100 img-fluid">
     </div>
     {# Parts #}
-    {% for p in parts %}
-      <dl class="part part_{{ loop.index }}">
-        <dt class="part__name">{{ p.name }}</dt>
-        <dd class="part__desc">{{ p.descr }}</dd>
-        {% for arrow in p.arrows %}
-            <img class="arrow" src="static/images/content/{{ arrow }}.svg" alt="">
-        {% endfor %}
-      </dl>
-    {% endfor %}
+    <div class="parts__wrapper">
+      {% for p in parts %}
+        <div class="part part_{{ loop.index }}">
+          <img src="static/images/content/part{{ loop.index }}.png" alt=""
+               class="part__img d-lg-none img-fluid mr-3"
+               style="left: 0; top: 0; object-fit: contain;"
+          >
+          <dl>
+            <dt class="part__name">{{ p.name }}</dt>
+            <dd class="part__desc">{{ p.descr }}</dd>
+          </dl>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 
 </section>
@@ -58,36 +58,42 @@
   {
     img: "bi1",
     name: "Фиксатор для <br> удобного хранения",
-    descr: "Дополнительная <br>  проработка бедер, <br> ягодиц и ступней"
+    descr: "Можете хранить массажер вертикально у стены или горизонтально под кроватью"
   },
   {
     img: "bi2",
-    name: "Суджок-массажер <br> для рук",
-    descr: "Позволяет усилить воздействие при занятиях <br> на тренажере"
+    name: "Медицинский массажер «Су Джок» для рук",
+    descr: "Усиливает кровообращение в кистях и стопах"
   },
   {
     img: "bi3",
-    name: "Инструкция и <br> записи уроков",
-    descr: "Полный комплект поможет получить максимум оздоровительного эффекта"
+    name: "Сопровождение 21 день по занятиям на Древмасс",
+    descr: "Позволяет каждому легко внедрить занятия в жизнь. Сопровождается авторской видео методикой"
   },
   {
     img: "bi4",
-    name: "Комплект для ухода <br> за массажером",
-    descr: "Для постепенного выправления сколиоза"
+    name: "Дополнительные подарки к Массажеру",
+    descr: "Воск для смазки осей. Тряпочка и браслет Древмасс."
   }
 ] %}
 
-<section>
+<section id="dops">
   <div class="container">
     {# Title #}
-    <h2 class="h1 text-center mb-5">Что также входит в коробку?</h2>
+    <h2 class="h1 text-center mb-5">Что также входит в комплектацию?</h2>
     {# Box Items #}
-    <div class="row text-center">
+    <div class="row text-center flex-nowrap overflow-auto">
 
       {% for i in boxItems %}
         
-        <div class="col-12 col-lg-3">
-          <img class="w-75 img-fluid mb-3" src="static/images/content/{{ i.img }}.png" alt="{{ i.name }}">
+        <div class="col-5 col-md-3">
+          <div class="position-relative cube-75 mb-3">
+            <img class="w-75 img-fluid position-absolute w-100 h-100"
+                 src="static/images/content/{{ i.img }}.png" 
+                 alt="{{ i.name }}"
+                 style="left: 0; top: 0; object-fit: cover;"
+            >
+          </div>
           <h3 class="text-20">{{ i.name | safe }}</h3>
           <p class="font-weight-light mx-auto" style="max-width: 220px">{{ i.descr | safe  }}</p>
         </div>
@@ -98,6 +104,7 @@
 </section>
 
 <section>
+  <h2 class="sr-only">Преимущества Древмасс</h2>
   <div class="container">
     <div class="bg-info rounded-sm p-4">
       <div class="row">
@@ -130,8 +137,8 @@
           </ul>
         </div>
         <div class="col-12 col-lg-3">
-          <div class="px-3 py-4 bg-white opacity-7 rounded">
-            *Мы не рассматриваем тяжелые патологии позвоночника, к которым требуется комплексный профессиональный подход
+          <div class="px-3 py-4 bg-white rounded" style="opacity: 0.7;">
+            *Мы не рассматриваем тяжелые патологии позвоночника, к которым требуется комплексный профессиональный подход. <a href="https://docs.google.com/document/d/1EEsoKZpup4xnBa6cWpAncrX8TtF20fN3aYwALHLQ05c/edit?usp=sharing" target="_blank"><small>Показания и противопоказания</small></a>
           </div>
         </div>
       </div>

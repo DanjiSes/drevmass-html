@@ -1,1 +1,21 @@
-// HAS NO CSS CODE. WOW!
+@mixin ways--lg() {
+  
+}
+
+@mixin ways--md() {
+  
+}
+
+@mixin ways--sm() {
+  
+}
+
+@mixin ways--xs() {
+  .way-item {
+    max-width: 380px;
+
+    .cube {
+      max-width: 220px;
+    }
+  }
+}

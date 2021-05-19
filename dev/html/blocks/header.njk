@@ -1,12 +1,15 @@
 {%set menu = [
-  {"t": "Как снять боль?", "l": "#"},
-  {"t": "Комплектация", "l": "#"},
-  {"t": "Отзывы", "l": "#"},
-  {"t": "Гарантия", "l": "#"},
-  {"t": "Контакты", "l": "#"}
+  {"t": "Комплектация", "l": "#kmplektaciya"},
+  {"t": "Отзывы", "l": "#otzivy"},
+  {"t": "Гарантия", "l": "#garantiya"}
 ]%}
 
-{%set phone = { "t": "+7 999 999 99 99", "l": "+79999999999" } %}
+{# 
+  {"t": "Как снять боль?", "l": "#"}
+  {"t": "Контакты", "l": "#"}
+#}
+
+{%set phone = { "t": "8 800 700 37 79", "l": "88007003779" } %}
 
 <header class="header">
   <div class="container-fluid py-2 d-flex align-items-center justify-content-between">
@@ -14,24 +17,35 @@
     {# Logo #}
     <div class="logo">
       <img src="static/images/logo.png" alt="DREV MASS">
+      <strong class="font-weight-normal" style="max-width: 230px;">
+        Производим медицинские
+        массажеры для спины с 2012 года.
+        Продаем и доставляем по всему миру
+      </strong>
     </div>
 
     {# Nav #}
     <nav class="nav d-none d-lg-block">
       <ul class="list-unstyled">
         {% for l in menu %}
-          <li><a href="{{ l.l }}">{{ l.t }}</a></li>
+          <li><a class="js-scrollTo" href="{{ l.l }}">{{ l.t }}</a></li>
         {% endfor %}
       </ul>
     </nav>
 
     <div class="px-3 d-flex align-items-center">
-      {# Phone #}
-      <a href="tel:{{ phone.l }}"
-        class="phone text-dark font-weight-bold d-none d-lg-block"
-        data-t="{{ phone.t }}">
-        {{ phone.t }}
+      {# Cta btn #}
+      <a href="#callBackModal" data-toggle="modal" class="d-none d-lg-block btn text-white bg-info rounded-pill py-2 px-3 mr-4 text-nowrap">
+        Подберем вам массажер
       </a>
+      {# Phone #}
+      <div class="phone d-none d-lg-block text-nowrap">
+        <a href="tel:{{ phone.l }}"
+          class="text-dark font-weight-bold">
+          {{ phone.t }}
+        </a>
+        <small class="d-block">Работаем с 09:00 до 21:00 по МСК</small>
+      </div>
 
       <a href="#menu" class="d-lg-none">
         <svg width="33" height="21" viewBox="0 0 33 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,18 +85,24 @@
     <nav class="nav mb-4">
       <ul class="list-unstyled flex-column">
         {% for l in menu %}
-          <li><a href="{{ l.l }}">{{ l.t }}</a></li>
+          <li><a class="js-scrollTo" href="{{ l.l }}">{{ l.t }}</a></li>
         {% endfor %}
       </ul>
     </nav>
   </div>
 
-  {# Phone #}
-  <a href="tel:{{ phone.l }}"
-    class="phone text-dark font-weight-bold"
-    data-t="{{ phone.t }}">
-    {{ phone.t }}
-  </a>
+  <div>
+    {# Phone #}
+    <a href="tel:{{ phone.l }}"
+      class="phone text-dark font-weight-bold">
+      {{ phone.t }}
+    </a>
+    <small class="d-block">Работаем с 09:00 до 21:00 по МСК</small>
+    {# Cta btn #}
+    <a href="#callBackModal" data-toggle="modal" class="d-block w-100 btn text-white bg-info rounded-pill py-2 px-3 mt-4 text-nowrap">
+      Подберем вам массажер
+    </a>
+  </div>
 </div>
 
-<a href="#-" class="mobile-nav-overlay"></a>
+<a href="#" class="mobile-nav-overlay"></a>

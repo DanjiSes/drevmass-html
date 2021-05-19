@@ -25,3 +25,10 @@ $headings-font-weight: 700;
 $border-radius: rem(10px);
 $border-radius-lg: rem(20px);
 $border-radius-sm: rem(5px);
+
+$input-padding-y:  rem(28px);
+$input-padding-x:  rem(20px);
+$input-bg: $light;
+$input-border-width: 0;
+$input-btn-focus-color:       rgba($dark, .25) !default;
+$input-font-size: rem(18px);

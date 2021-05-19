@@ -50,19 +50,21 @@
     {# Title #}
     <h2 class="h1 mb-5">Какие существуют способы избавления от боли в спине?</h2>
     {# Ways #}
-    <div class="row">
+    <div class="row justify-content-center mb-n4">
     
       {% for w in ways %}
     
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
           {# Way #}
-          <div class="py-4 px-4 shadow rounded h-100" style="border-bottom: 10px solid #C6C6C6">
+          <div class="way-item mx-auto py-4 px-4 bg-white shadow rounded h-100" style="border-bottom: 10px solid #C6C6C6">
             {# Preview #}
-            <div class="mx-auto mb-4 rounded-circle overflow-hidden"
-                 style="width: 220px; height: 220px;
+            <div class="cube position-relative mx-auto mb-4 rounded-circle overflow-hidden w-100"
+                 style="
                   box-shadow: inset 0px 4px 11px rgba(0, 0, 0, 0.25);
                   border: 3px solid #00B2A9;">
-              <img src="{{ w.img }}" alt="{{ w.name }}" class="w-100 img-fluid h-100" style="object-fit: cover;">
+              <img src="{{ w.img }}" alt="{{ w.name }}"
+                   class="position-absolute w-100 h-100 img-fluid "
+                   style="object-fit: cover;">
             </div>
             {# Title #}
             <h3 class="text-20 mb-3 text-center">{{ w.name }}</h3>

@@ -6,6 +6,22 @@ $(function() {
     centerMode: true,
     centerPadding: '80px',
     slidesToScroll: 5,
+    arrows: false,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+    ]
   });
 
   // Reviews popup
@@ -53,7 +69,8 @@ $(function() {
     slidesToShow: 1,
     slidesToScroll: 1,
     asNavFor: '.js-previewsSlider',
-    fade: true
+    arrows: false,
+    dots: false,
   });
 
   $('.js-previewsSlider').slick({
@@ -61,5 +78,17 @@ $(function() {
     slidesToScroll: 1,
     asNavFor: '.js-bigPreviewSlider',
     focusOnSelect: true,
+    arrows: false,
+    dots: false,
   });
+
+  // Smooth scroll
+
+  $(".js-scrollTo").click(function (){
+    $('html, body').animate({
+        scrollTop: $($(this).attr('href')).offset().top
+    }, 1500);
+  });
+
+  $(":input").inputmask();
 });

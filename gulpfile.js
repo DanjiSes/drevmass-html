@@ -5,6 +5,7 @@
 
 // Gulp instruments
 const { src, dest, series, parallel, watch } = require('gulp');
+const merge = require('merge-stream');
 // Nunjucks compiler
 const nunjucks                   = require('gulp-nunjucks');
 // Sass | SCSS compiler
@@ -16,6 +17,9 @@ const browserSync                = require('browser-sync').create();
 const rename                     = require("gulp-rename");
 const concat                     = require('gulp-concat');
 const del                        = require('del');
+// Build tools
+const cleanCSS                   = require('gulp-clean-css');
+const htmlmin                    = require('gulp-htmlmin');
 
 // ------------------------------------------
 // Work With HTML
@@ -26,6 +30,17 @@ function html() {
   return src('dev/html/*.njk')
     .pipe(nunjucks.compile())
     .pipe(rename({ extname: '.html' }))
+    .pipe(dest('build'))
+    .on('end', browserSync.reload);
+
+}
+
+function htmlMin() {
+
+  return src('dev/html/*.njk')
+    .pipe(nunjucks.compile())
+    .pipe(rename({ extname: '.html' }))
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(dest('build'))
     .on('end', browserSync.reload);
 
@@ -43,6 +58,15 @@ function css() {
     .pipe(browserSync.stream());
 }
 
+function cssMin() {
+
+  return src('dev/static/styles/main.scss')
+    .pipe(sass())
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(dest('build/static/css'))
+    .pipe(browserSync.stream());
+}
+
 // ------------------------------------------
 // Work With JS
 // ------------------------------------------
@@ -51,8 +75,10 @@ function jsLibs(cb) {
 
   const libs = [
     'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'node_modules/slick-carousel/slick/slick.min.js',
     'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+    'node_modules/inputmask/dist/jquery.inputmask.min.js',
   ];
 
   if (!libs.length) return cb();
@@ -90,20 +116,18 @@ function assets() {
 }
 
 function copy(from, to = '') {
-  return src(from).pipe(dest('build/static' + to));
+  return src(from).pipe(dest('build/static/' + to));
 }
 
 function copyFiles(cb) {
 
   const sources = [
-    // { from: '', to: '' }
+    { from: 'dev/static/assets/ajax-loader.gif', to: 'css' }
   ];
 
   if (!sources.length) return cb();
 
-  return parallel(
-    sources.map(source => copy(source.from, source.to))
-  );
+  return merge(sources.map(source => copy(source.from, source.to)));
 }
 
 // ------------------------------------------
@@ -149,11 +173,14 @@ function clean() {
 
 // EXPORT TASKS
 exports.html          = html;
+exports.htmlMin       = htmlMin;
 exports.css           = css;
+exports.cssMin        = cssMin;
 exports.js            = js;
 exports.jsLibs        = jsLibs;
 exports.watchFiles    = watchFiles;
 exports.serve         = serve;
+exports.copyFiles     = copyFiles;
 
 exports.default       = series(clean, parallel(html, css, js, jsLibs, copyFiles, assets, fonts, images), parallel(serve, watchFiles));
-exports.build         = series(clean, parallel(html, css, js, jsLibs, copyFiles, assets, fonts, images));
+exports.build         = series(clean, parallel(htmlMin, cssMin, js, jsLibs, copyFiles, assets, fonts, images));

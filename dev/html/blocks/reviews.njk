@@ -1,9 +1,9 @@
-<section class="reviews">
+<section class="reviews overflow-hidden" id="otzivy">
   <div class="container mb-4">
     <div class="row align-items-center">
       <div class="col-12 col-lg-5">
         {# Title #}
-        <h2 class="h1 m-0">Отзывы о Древмасс</h2>
+        <h2 class="h1 mb-3 mb-lg-0">Отзывы о Древмасс</h2>
       </div>
       <div class="col-12 col-lg-7">
         <div class="d-flex align-items-center position-relative px-4 py-3">
@@ -18,7 +18,7 @@
               <span hidden>Следующий слайд</span>
             </button>
           </div>
-          <p class="m-0 font-weight-light" style="max-width: 490px">За 9 лет работы мы помогли более 20000 человек значительно улучшить свою жизнь, избавив их от боли в спине</p>
+          <p class="m-0 font-weight-light" style="max-width: 490px">За 9 лет работы мы помогли более 30000 человек значительно улучшить свою жизнь, избавив их от боли в спине</p>
         </div>
       </div>
     </div>
@@ -26,13 +26,23 @@
 
   <div class="p-container pr-0 pt-3">
     <div class="js-reviews-slider">
-      {% for i in range(20) %}
+      {% for i in range(29) %}
         <div class="px-1">
-          <a href="static/images/content/r{{ [1,2] | random }}_b.png" class="js-review-img">
-            <img src="static/images/content/r{{ [1,2] | random }}.png" alt="Отзыв" class="w-100 img-fluid">
+          <a href="static/images/content/reviews/r{{ i+1 }}_b.png" class="js-review-img">
+            <img data-lazy="static/images/content/reviews/r{{ i+1 }}.png"
+                 src="static/images/content/review-preview.png"
+                 alt="Отзыв" class="w-100 img-fluid">
           </a>
         </div>
       {% endfor %}
     </div>
+  </div>
+
+  <div class="container">
+    <a href="https://www.youtube.com/playlist?list=PLjdFQU_oUl1s-J46-jkezWe-OP5BDnu-W"
+       class="btn text-white bg-info rounded-pill px-4 mt-3" target="_blank">
+      <img src="static/images/youtube-w.svg" alt="" class="mr-3">
+      <span>Еще более 70 отзывов на нашем youtube</span>
+    </a>
   </div>
 </section>
