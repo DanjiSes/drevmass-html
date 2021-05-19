@@ -5,6 +5,7 @@
 
 // Gulp instruments
 const { src, dest, series, parallel, watch } = require('gulp');
+const merge = require('merge-stream');
 // Nunjucks compiler
 const nunjucks                   = require('gulp-nunjucks');
 // Sass | SCSS compiler
@@ -115,20 +116,18 @@ function assets() {
 }
 
 function copy(from, to = '') {
-  return src(from).pipe(dest('build/static' + to));
+  return src(from).pipe(dest('build/static/' + to));
 }
 
 function copyFiles(cb) {
 
   const sources = [
-    // { from: '', to: '' }
+    { from: 'dev/static/assets/ajax-loader.gif', to: 'css' }
   ];
 
   if (!sources.length) return cb();
 
-  return parallel(
-    sources.map(source => copy(source.from, source.to))
-  );
+  return merge(sources.map(source => copy(source.from, source.to)));
 }
 
 // ------------------------------------------
@@ -174,13 +173,14 @@ function clean() {
 
 // EXPORT TASKS
 exports.html          = html;
-exports.htmlMin          = htmlMin;
+exports.htmlMin       = htmlMin;
 exports.css           = css;
 exports.cssMin        = cssMin;
 exports.js            = js;
 exports.jsLibs        = jsLibs;
 exports.watchFiles    = watchFiles;
 exports.serve         = serve;
+exports.copyFiles     = copyFiles;
 
 exports.default       = series(clean, parallel(html, css, js, jsLibs, copyFiles, assets, fonts, images), parallel(serve, watchFiles));
 exports.build         = series(clean, parallel(htmlMin, cssMin, js, jsLibs, copyFiles, assets, fonts, images));
