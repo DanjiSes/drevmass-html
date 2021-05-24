@@ -175,12 +175,18 @@
   .parts {
 
     &__preview {
-      display: none;
+      // display: none;
+      width: 100%;
+      max-width: 360px;
+
+      &-circle {
+        display: none;
+      }
     }
 
     &__wrapper {
-      display: flex;
-      flex-wrap: wrap;
+      display: none;
+      // flex-wrap: wrap;
     }
   }
 

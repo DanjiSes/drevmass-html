@@ -34,7 +34,7 @@ body::before {
 }
 
 body::before, body::after {
-  display: none;
+  // display: none;
 }
 
 @include media-breakpoint-down('lg') {
