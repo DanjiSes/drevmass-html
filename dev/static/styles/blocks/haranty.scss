@@ -21,7 +21,11 @@
 }
 
 @mixin haranty--md() {
-  
+  .haranty {
+    .sticky-top {
+      position: static;
+    }
+  }
 }
 
 @mixin haranty--sm() {
