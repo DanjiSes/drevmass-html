@@ -5,8 +5,12 @@
 {% set bgImage = 'static/images/content/restrict-bg.png' %}
 {% set bgImageDots = 'static/images/restrict-dots.svg' %}
 
-<section class="restrict overflow-hidden">
-
+<section class="restrict position-relative">
+  {# BG #}
+  <div class="restricts__img">
+    <img src="{{ bgImageDots }}" alt="" class="d-none d-lg-inline w-100 img-fluid position-absolute" style="left: 0; top: 0;">
+    <img src="{{ bgImage }}" alt="" class="w-100 img-fluid">
+  </div>
   <div class="container">
     {# Title #}
     <h2 class="h1 mb-3 text-center mx-auto">Боль в спине - <strong class="text-warning">ограничитель вашей жизни</strong></h2>
@@ -14,10 +18,6 @@
     <p class="text-center lead mx-auto" style="max-width: 902px">У нас принято терпеть и не решать проблему боли в спине. Постенно боль усугубляется, и человек начинает выстраивать свою активность и быт вокруг нее. К чему это приводит:</p>
     {# Results #}
     <div class="restricts">
-      <div class="restricts__img">
-        <img src="{{ bgImageDots }}" alt="" class="d-none d-lg-inline w-100 img-fluid position-absolute" style="left: 0; top: 0;">
-        <img src="{{ bgImage }}" alt="" class="w-100 img-fluid">
-      </div>
       <ul class="restricts__list list-unstyled">
         <li class="restricts__item">Регулярная покупка и прием обезболивающих</li>
         <li class="restricts__item">Сложнее сконцентрироваться на работе, сниженная работоспособность</li>

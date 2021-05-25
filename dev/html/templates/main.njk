@@ -17,14 +17,17 @@
 </head>
 <body class="{{ bodyClass | default('')}}">
 
-{% include "blocks/header.njk" %}
+<div class="wrapper overflow-hidden">
 
-{% block content %}
-	<p>Page content is empty</p>
-{% endblock %}
+	{% include "blocks/header.njk" %}
 
-{% include "blocks/footer.njk" %}
+	{% block content %}
+		<p>Page content is empty</p>
+	{% endblock %}
 
+	{% include "blocks/footer.njk" %}
+
+</div>
 
 <script src="static/js/libs.min.js"></script>
 <script src="static/js/main.js"></script>

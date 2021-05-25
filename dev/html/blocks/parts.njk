@@ -30,32 +30,36 @@
   <div class="container position-relative">
     {# Title #}
     <h2 class="h1 text-center mb-5 mb-lg-0">Массажер-тренажер Древмасс совмещает положительные стороны всех способов и позволяет добиться результата за 7 минут в день</h2>
-    {# Preview #}
-    <div class="parts__preview">
-      <div class="parts__preview-circle"></div>
-      <img src="static/images/content/parts_preview.png" alt="" class="w-100 img-fluid" id="parsPreview">
-      <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-          if (window.innerWidth <= 991.98) {
-            document.getElementById('parsPreview').src = 'static/images/content/parts_preview_sm.svg'
-          }
-        });
-      </script>
-    </div>
-    {# Parts #}
-    <div class="parts__wrapper">
-      {% for p in parts %}
-        <div class="part part_{{ loop.index }}">
-          <img src="static/images/content/part{{ loop.index }}.png" alt=""
-               class="part__img d-lg-none img-fluid mr-3"
-               style="left: 0; top: 0; object-fit: contain;"
-          >
-          <dl>
-            <dt class="part__name">{{ p.name }}</dt>
-            <dd class="part__desc">{{ p.descr }}</dd>
-          </dl>
-        </div>
-      {% endfor %}
+    <div class="parts__wrapper-sm">
+      {# Preview #}
+      <div class="parts__preview">
+        <div class="parts__preview-circle"></div>
+        <img src="static/images/content/parts_preview.png" alt="" class="w-100 img-fluid" id="parsPreview">
+        <script>
+          document.addEventListener("DOMContentLoaded", (event) => {
+            if (window.innerWidth <= 991.98) {
+              document.getElementById('parsPreview').src = 'static/images/content/parts_preview_sm.png'
+            }
+          });
+        </script>
+      </div>
+      {# Parts #}
+      <div class="parts__wrapper">
+        {% for p in parts %}
+          <div class="part part_{{ loop.index }}">
+            {% if loop.index == 1 or loop.index == 3 %}
+              <img src="static/images/content/part{{ loop.index }}.png" alt=""
+                  class="part__img d-lg-none img-fluid mr-3"
+                  style="left: 0; top: 0; object-fit: contain;"
+              >
+            {% endif %}
+            <dl>
+              <dt class="part__name">{{ p.name }}</dt>
+              <dd class="part__desc">{{ p.descr }}</dd>
+            </dl>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
