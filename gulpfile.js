@@ -20,6 +20,7 @@ const del                        = require('del');
 // Build tools
 const cleanCSS                   = require('gulp-clean-css');
 const htmlmin                    = require('gulp-htmlmin');
+const prettier                   = require('gulp-prettier');
 
 // ------------------------------------------
 // Work With HTML
@@ -30,6 +31,7 @@ function html() {
   return src('dev/html/*.njk')
     .pipe(nunjucks.compile())
     .pipe(rename({ extname: '.html' }))
+    .pipe(prettier())
     .pipe(dest('build'))
     .on('end', browserSync.reload);
 
@@ -183,4 +185,6 @@ exports.serve         = serve;
 exports.copyFiles     = copyFiles;
 
 exports.default       = series(clean, parallel(html, css, js, jsLibs, copyFiles, assets, fonts, images), parallel(serve, watchFiles));
-exports.build         = series(clean, parallel(htmlMin, cssMin, js, jsLibs, copyFiles, assets, fonts, images));
+exports.buildMin      = series(clean, parallel(htmlMin, cssMin, js, jsLibs, copyFiles, assets, fonts, images));
+exports.build         = series(clean, parallel(html, css, js, jsLibs, copyFiles, assets, fonts, images));
+exports.watch         = series(clean, parallel(html, css, js, jsLibs, copyFiles, assets, fonts, images), parallel(watchFiles));

@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "gulp-prettier": "^3.0.0",
     "inputmask": "^5.0.5",
     "jquery": "^3.6.0",
     "magnific-popup": "^1.1.0",
