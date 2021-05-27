@@ -22,6 +22,8 @@ const cleanCSS                   = require('gulp-clean-css');
 const htmlmin                    = require('gulp-htmlmin');
 const prettier                   = require('gulp-prettier');
 
+const buildPath = buildPath + ''
+
 // ------------------------------------------
 // Work With HTML
 // ------------------------------------------
@@ -32,7 +34,7 @@ function html() {
     .pipe(nunjucks.compile())
     .pipe(rename({ extname: '.html' }))
     .pipe(prettier())
-    .pipe(dest('build'))
+    .pipe(dest(buildPath))
     .on('end', browserSync.reload);
 
 }
@@ -43,7 +45,7 @@ function htmlMin() {
     .pipe(nunjucks.compile())
     .pipe(rename({ extname: '.html' }))
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(dest('build'))
+    .pipe(dest(buildPath))
     .on('end', browserSync.reload);
 
 }
@@ -56,7 +58,7 @@ function css() {
 
   return src('dev/static/styles/main.scss')
     .pipe(sass())
-    .pipe(dest('build/static/css'))
+    .pipe(dest(buildPath + '/static/css'))
     .pipe(browserSync.stream());
 }
 
@@ -65,7 +67,7 @@ function cssMin() {
   return src('dev/static/styles/main.scss')
     .pipe(sass())
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(dest('build/static/css'))
+    .pipe(dest(buildPath + '/static/css'))
     .pipe(browserSync.stream());
 }
 
@@ -87,13 +89,13 @@ function jsLibs(cb) {
 
   return src(libs)
     .pipe(concat('libs.min.js'))
-    .pipe(dest('build/static/js'));
+    .pipe(dest(buildPath + '/static/js'));
 }
 
 function js() {
 
   return src('dev/static/js/*')
-    .pipe(dest('build/static/js'))
+    .pipe(dest(buildPath + '/static/js'))
     .on('end', browserSync.reload);;
 }
 
@@ -104,7 +106,7 @@ function js() {
 function images() {
 
   return src('dev/static/images/**/*')
-    .pipe(dest('build/static/images'));
+    .pipe(dest(buildPath + '/static/images'));
 }
 
 // ------------------------------------------
@@ -114,11 +116,11 @@ function images() {
 function assets() {
 
   return src('dev/static/assets/**/*')
-    .pipe(dest('build/static'));
+    .pipe(dest(buildPath + '/static'));
 }
 
 function copy(from, to = '') {
-  return src(from).pipe(dest('build/static/' + to));
+  return src(from).pipe(dest(buildPath + '/static/' + to));
 }
 
 function copyFiles(cb) {
@@ -138,7 +140,7 @@ function copyFiles(cb) {
 
 function fonts() {
   return src('dev/static/fonts/*')
-    .pipe(dest('build/static/fonts'));
+    .pipe(dest(buildPath + '/static/fonts'));
 }
 
 // ------------------------------------------
@@ -148,7 +150,7 @@ function fonts() {
 function serve() {
   // init server
   browserSync.init({
-    server: "./build",
+    server: buildPath,
     notify: false,
     scrollProportionally: false,
   });
@@ -168,23 +170,33 @@ function watchFiles() {
   watch('dev/static/js/**/*', series(js));
 }
 
+function watchStaticFiles() {
+  // styles
+  watch('dev/static/styles/**/*', series(css));
+  // images
+  watch('dev/static/images/**/*.{png,jpg,gif,svg}', series(images));
+  // js
+  watch('dev/static/js/**/*', series(js));
+}
+
 // clean build folder
 function clean() {
-  return del('build');
+  return del(buildPath + '');
 }
 
 // EXPORT TASKS
-exports.html          = html;
-exports.htmlMin       = htmlMin;
-exports.css           = css;
-exports.cssMin        = cssMin;
-exports.js            = js;
-exports.jsLibs        = jsLibs;
-exports.watchFiles    = watchFiles;
-exports.serve         = serve;
-exports.copyFiles     = copyFiles;
+exports.html                = html;
+exports.htmlMin             = htmlMin;
+exports.css                 = css;
+exports.cssMin              = cssMin;
+exports.js                  = js;
+exports.jsLibs              = jsLibs;
+exports.watchFiles          = watchFiles;
+exports.watchStaticFiles    = watchStaticFiles;
+exports.serve               = serve;
+exports.copyFiles           = copyFiles;
 
 exports.default       = series(clean, parallel(html, css, js, jsLibs, copyFiles, assets, fonts, images), parallel(serve, watchFiles));
 exports.buildMin      = series(clean, parallel(htmlMin, cssMin, js, jsLibs, copyFiles, assets, fonts, images));
 exports.build         = series(clean, parallel(html, css, js, jsLibs, copyFiles, assets, fonts, images));
-exports.watch         = series(clean, parallel(html, css, js, jsLibs, copyFiles, assets, fonts, images), parallel(watchFiles));
+exports.watch         = series(clean, parallel(css, js, jsLibs, copyFiles, assets, fonts, images), parallel(watchStaticFiles));
