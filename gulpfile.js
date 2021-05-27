@@ -22,6 +22,7 @@ const cleanCSS                   = require('gulp-clean-css');
 const htmlmin                    = require('gulp-htmlmin');
 const prettier                   = require('gulp-prettier');
 
+// Папка для билда
 const buildPath = 'build'
 
 // ------------------------------------------
