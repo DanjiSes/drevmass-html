@@ -22,7 +22,7 @@ const cleanCSS                   = require('gulp-clean-css');
 const htmlmin                    = require('gulp-htmlmin');
 const prettier                   = require('gulp-prettier');
 
-const buildPath = buildPath + ''
+const buildPath = 'build'
 
 // ------------------------------------------
 // Work With HTML
